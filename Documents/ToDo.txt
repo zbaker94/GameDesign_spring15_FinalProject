@@ -1,0 +1,25 @@
+1. Do we all have access to text processor (Word, etc.) and spreadsheet (Excel, etc) for project management?  Lemme know which so we can agree.
+
+2. Meeting space (KSU location, my house (east Cobb about 12 mi from campus), or....ideas?
+
+3. Meeting medium (Skype, go to meeting, etc.) where we can talk back and forth and maybe all work on the same virtual file at once.  Should be something available for free for students.
+
+4. file naming rules for version control
+
+5. tentative project schedule as (what do you like?  I'm used to using GANTT charts). fill in milestone dates and set alarms 
+
+6. Pitch document draft
+
+7. start Game list of classes,actors, obstacles, targets; list of abilities/weapons and their behaviors in English/pseudo-code
+
+8. gather graphics for actors/targets
+
+9. gather sound files for effects
+
+10 agree upon key control for multiple actors
+
+11. other specifications as they are identified
+
+12. start compiling list of items for QA test protocol
+
+13. assign tasks  meeting schedule and minimum communication schedule.
