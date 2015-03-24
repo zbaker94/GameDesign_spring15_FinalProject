@@ -1,5 +1,19 @@
 #BlueJ class context
 comment0.params=
-comment0.target=void\ act()
+comment0.target=Enemy()
 comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Enemy\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=1
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=java.lang.String\ getDir()
+comment3.params=
+comment3.target=void\ patrol()
+comment4.params=
+comment4.target=java.lang.String\ getDirection()
+comment5.params=
+comment5.target=boolean\ checkCollide()
+comment6.params=
+comment6.target=void\ turnAway()
+comment7.params=
+comment7.target=void\ shootPlayer()
+numComments=8
