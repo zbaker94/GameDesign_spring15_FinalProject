@@ -17,28 +17,33 @@ public class Player extends Mover
     {
         checkKeys();
         checkCollide();
-        
+      
     }   
-    
+
+    //checks to see if directional keys are pressed, and makes movement based on that
     public void checkKeys(){
         if(Greenfoot.isKeyDown("left")){
-            setRotation(180);
-            move(4);
+            moveLeft(4);
         }
         if(Greenfoot.isKeyDown("right")){
-            setRotation(0);
-            move(4);
+           moveRight(4);
         }
         if(Greenfoot.isKeyDown("up")){
-            setRotation(270);
-            move(4);
+            moveUp(4);
         }
         if(Greenfoot.isKeyDown("down")){
-            setRotation(90);
-            move(4);
+            moveDown(4);
         }
     }
+    //checks if player is colliding, if it is with an enemy, player dies and respawns
     public void checkCollide(){
-        
+        if(isTouching(Enemy.class)){
+            Greenfoot.playSound("die.wav");
+            World f =  getWorld();
+            
+            f.removeObject(this);
+           
+        }
     }
-}
+   }
+

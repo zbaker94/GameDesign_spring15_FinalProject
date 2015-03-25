@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Country here.
+ * Simply a superclass for any code that needs to be incorporated into the country levels.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -15,8 +15,64 @@ public class Country extends World
      */
     public Country()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 700x500 cells with a cell size of 1x1 pixels.
         super(700, 500, 1); 
     }
-  
+    
+    //method for randomly generating an actor
+  public void generateActor(String actor, int count){
+      for(int i = 0; i < count; i++){
+      
+      if (actor == "Enemy"){
+          GreenfootImage agent = new GreenfootImage("Police1.png");
+
+        int x = Greenfoot.getRandomNumber((480) +1); 
+        int y = Greenfoot.getRandomNumber(500 +1); 
+
+        while(x < (agent.getWidth()) || (x + agent.getWidth()) > 700){
+            x = Greenfoot.getRandomNumber((700 - agent.getHeight()) +1); 
+        }
+        while(y < (agent.getHeight()) || y  > 366){
+            y = Greenfoot.getRandomNumber(500 +1);
+        }
+
+        addObject(new Enemy(),x,y);
+
+          
+        }
+        if(actor == "Cathedral"){
+            GreenfootImage cathedral = new GreenfootImage("St_Peters_Italy.png");
+        int x = Greenfoot.getRandomNumber((450) +1); 
+        int y = Greenfoot.getRandomNumber(500 +1); 
+        while(x - cathedral.getWidth() < 0){
+            x = Greenfoot.getRandomNumber((450) +1); 
+        }
+
+        while (y - cathedral.getHeight()/2 < 0 || y + cathedral.getHeight()/2 > 500){
+            y =  Greenfoot.getRandomNumber(500 +1);
+        }
+       
+        
+       addObject(new Cathedral(),x,y);
+        }
+        
+    }
+
+}
+//special generateActor for placing an actor at specific location
+public void generateActor(String actor, int x, int y){
+     if(actor == "Hero"){
+         Player hero = new Player();
+        addObject(hero,x,y);
+    }
+     if(actor == "Enemy"){
+         Enemy enemy = new Enemy();
+        addObject(enemy,x,y);
+    }
+     if(actor == "Cathedral"){
+         Cathedral cath = new Cathedral();
+        addObject(cath,x,y);
+    }
+    
+}
 }

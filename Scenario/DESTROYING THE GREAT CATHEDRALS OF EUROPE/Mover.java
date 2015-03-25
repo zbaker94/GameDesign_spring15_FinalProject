@@ -12,6 +12,35 @@ public class Mover extends Actor
         turn(90);
     }
     
+    /**
+     * Move a bit to the right.
+     */
+    public void moveRight(int speed)
+    {
+        setLocation ( getX() + speed, getY() );
+    }
+    
+    /**
+     * Move a bit to the left.
+     */
+    public void moveLeft(int speed)
+    {
+        setLocation ( getX() - speed, getY() );
+    }
+    /**
+     * Move up a bit.
+     */
+    public void moveUp(int speed)
+    {
+        setLocation ( getX(), getY()  - speed );
+    }
+    /**
+     * Move down a bit.
+     */
+    public void moveDown(int speed)
+    {
+        setLocation ( getX(), getY() + speed );
+    }
 
     /**
      * Turn 'angle' degrees towards the right (clockwise).
@@ -55,5 +84,12 @@ public class Mover extends Actor
             return true;
         else
             return false;
+    }
+    /**
+     * End this game (that is: stop the simuation).
+     */
+    private void gameEnd()
+    {
+        Greenfoot.stop();
     }
 }
