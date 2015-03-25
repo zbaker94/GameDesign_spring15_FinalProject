@@ -25,6 +25,18 @@ public class Player extends Mover
             setRotation(180);
             move(4);
         }
+        if(Greenfoot.isKeyDown("right")){
+            setRotation(0);
+            move(4);
+        }
+        if(Greenfoot.isKeyDown("up")){
+            setRotation(270);
+            move(4);
+        }
+        if(Greenfoot.isKeyDown("down")){
+            setRotation(90);
+            move(4);
+        }
     }
     public void checkCollide(){
         
