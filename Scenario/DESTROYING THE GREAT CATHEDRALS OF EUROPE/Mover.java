@@ -3,7 +3,7 @@ import greenfoot.*;
 public class Mover extends Actor
 {
     private static final double WALKING_SPEED = 5.0;
-    
+      String direction;
     /**
      * Turn 90 degrees to the right (clockwise).
      */
@@ -71,6 +71,22 @@ public class Mover extends Actor
         
         setLocation(x, y);
     }
+    
+    public void moveDir(int speed){
+        if(direction == "up"){
+            moveUp(speed);
+        }
+          if(direction == "down"){
+            moveDown(speed);
+        }
+          if(direction == "left"){
+            moveLeft(speed);
+        }
+          if(direction == "right"){
+            moveRight(speed);
+        }
+        
+    }
 
     
     /**
@@ -91,5 +107,12 @@ public class Mover extends Actor
     private void gameEnd()
     {
         Greenfoot.stop();
+    }
+    
+    public void setDirection(String dir){
+        direction = dir;
+    }
+    public String getDirection(){
+        return direction;
     }
 }

@@ -8,14 +8,20 @@ import greenfoot.*;
  */
 public class Enemy extends Mover
 {
-    private String direction; 
+    private String axis;
+
     private int count = 0;
     private int interval = Greenfoot.getRandomNumber(20);
     private String currentImage;
     private int movement;
 
     public Enemy(){
-        direction = getDir();
+        axis = getDir();
+        if(axis == "horizontal"){
+            direction = "right";
+        }else{
+            direction = "up";
+        }
         movement = Greenfoot.getRandomNumber(4) + 2;
     }
 
@@ -26,8 +32,9 @@ public class Enemy extends Mover
 
     public void act() 
     {
-
-        patrol();
+        if(atWorldEdge()){
+            turnAway();
+        }
         if(checkCollide()){
             turnAway();
         }
@@ -40,82 +47,62 @@ public class Enemy extends Mover
         }else{
             ++count;
         }
-        move(movement);
+        moveDir(movement);
 
     }    
 
-    
     //uses a random number to determine which direction the enemy should move
     public String getDir(){
         String dir;
-        int direction = Greenfoot.getRandomNumber(2);
-        if(direction < 1){
+        int a = Greenfoot.getRandomNumber(2);
+        if(a < 1){
             dir = "vertical";
         }else{
             dir = "horizontal";
         }
         return dir;
     }
-    //(outdated) sets enemy to correct direction and turns around if he is at world edge
-    public void patrol(){
-        if(direction == "vertical"){
-            if(getRotation() != 90 && getRotation() != 270){
-                setImage("Police1-up.png");
-                currentImage = "Police1-up";
-                setRotation(270);
-            }
-            if(getRotation() == 90){
-                setImage("Police1-down.png");
-                currentImage = "Police1-down";
-            }else{
-                setImage("Police1-up.png");
-                currentImage = "Police1-up";
-            }
-        }
-        if(direction == "horizontal"){
-            if(getRotation() != 0 && getRotation() != 180){
-                setImage("Police1.png");
-                currentImage = "Police1";
-                setRotation(0);
-            }
-            if(getRotation() == 180){
-                setImage("Police1-left.png");
-                currentImage = "Police1-left";
-            }else{
-                setImage("Police1.png"); 
-                currentImage = "Police1";
-            }
-        }
 
-        if(atWorldEdge()){
-            turnAway();
-
-        }
-    }
     //returns which axis the enemy is moving on
     public String getDirection(){
         return direction;
     }
     //returns whether this is colliding with any object
     public boolean checkCollide(){
-        if(isTouching(null)){
+        if(isTouching(Player.class)){
             return true;
         }else{
             return false;
         }
     }
-    
-    //turns the character
+
+    //turns the character in opposite  direction
     public void turnAway(){
-        turn(180);
-        move(2);
+        if(direction == "up"){
+            direction = "down";
+            //moveDir(2);
+        }else
+        if(direction == "down"){
+            direction = "up";
+            //moveDir(2);
+
+        }else
+        if(direction == "left"){
+            direction = "right";
+            //moveDir(2);
+
+        }else
+        if(direction == "right"){
+            direction = "left";
+            //moveDir(2);
+
+        }
+
     }
     //stops moving and will shoot at player's x,y location at execution 
     public void shootPlayer(){
-        setImage(currentImage + "-s.png");
-        //Greenfoot.delay(10);
-        setImage(currentImage+".png");
 
+        
     }
 }
 

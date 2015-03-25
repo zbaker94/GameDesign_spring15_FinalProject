@@ -8,7 +8,9 @@ import greenfoot.*;
  */
 public class Player extends Mover
 {
-    
+    public Player(){
+        setImage("Cowboy2.png");
+    }
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,22 +19,29 @@ public class Player extends Mover
     {
         checkKeys();
         checkCollide();
+        
       
     }   
 
     //checks to see if directional keys are pressed, and makes movement based on that
     public void checkKeys(){
         if(Greenfoot.isKeyDown("left")){
-            moveLeft(4);
+           direction = "left";
+           setImage("Cowboy2.png");
+           moveDir(4);
         }
         if(Greenfoot.isKeyDown("right")){
-           moveRight(4);
+           direction = "right";
+           setImage("Cowboy1.png");
+           moveDir(4);
         }
         if(Greenfoot.isKeyDown("up")){
-            moveUp(4);
+            direction = "up";
+            moveDir(4);
         }
         if(Greenfoot.isKeyDown("down")){
-            moveDown(4);
+            direction = "down";
+            moveDir(4);
         }
     }
     //checks if player is colliding, if it is with an enemy, player dies and respawns
