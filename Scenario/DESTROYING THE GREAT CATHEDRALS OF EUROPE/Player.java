@@ -52,14 +52,14 @@ public class Player extends Mover
             moveDir(4);
         }
         if(Greenfoot.isKeyDown("space")){
-            //if(canShoot == true){
+            
                 
                 if(ammo != 0 && reloadDelayCount >= gunReloadTime){
                 shoot();
             }
         }
     }
-    //checks if player is colliding, if it is with an enemy, player dies and respawns
+    //checks if player is colliding, if it is with an enemy, player dies 
     public void checkCollide(){
         if(isTouching(Enemy.class)){
             Greenfoot.playSound("die.wav");
@@ -72,18 +72,17 @@ public class Player extends Mover
         }
     }
     
-    public boolean canShoot(){
-        if(ammo != 0 && reloadDelayCount >= gunReloadTime){
-                return true;
-        }else{
-        return false;
-    }
-    }
+    
+    //creates a bulllet that moves in the same direction as the player
     public void shoot(){
         ammo--;
         reloadDelayCount = 0;
         Greenfoot.playSound("shoot.wav");
         getWorld().addObject(new Bullet(direction), getX(), getY());
+    }
+    
+    public void die(){
+        getWorld().removeObject(this);;
     }
    }
 

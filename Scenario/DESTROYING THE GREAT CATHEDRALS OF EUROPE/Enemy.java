@@ -14,14 +14,18 @@ public class Enemy extends Mover
     private int interval = Greenfoot.getRandomNumber(20);
     private String currentImage;
     private int movement;
+    private int hp = 10;
+    private int shootInterval = Greenfoot.getRandomNumber(250) +50;
 
     public Enemy(){
+
         axis = getDir();
         if(axis == "horizontal"){
             direction = "right";
         }else{
             direction = "up";
         }
+
         movement = Greenfoot.getRandomNumber(4) + 2;
     }
 
@@ -33,29 +37,26 @@ public class Enemy extends Mover
     public void act() 
     {
         if(this !=null){
-        if(atWorldEdge()){
-            turnAway();
-        }
-        if(checkCollide()){
-            turnAway();
-        }
-        if(count == 90){
-            count =0;
-            //Greenfoot.delay(20);
-            shootPlayer();
-            //Greenfoot.delay(20);
+            if(atWorldEdge()){
+                turnAway();
+            }
+            if(checkCollide()){
+                turnAway();
+            }
+            if(count == shootInterval){
+                count =0;
+                //Greenfoot.delay(20);
+                shootPlayer();
+                //Greenfoot.delay(20);
 
-        }else{
-            ++count;
-        }
-       
-        
+            }else{
+                ++count;
+            }
+
            
-        
-        moveDir(movement);
+            moveDir(movement);
+        }
     }
-    }
-        
 
     //uses a random number to determine which direction the enemy should move
     public String getDir(){
@@ -100,7 +101,7 @@ public class Enemy extends Mover
 
         }else
         if(direction == "right"){
-             setImage("Police2.png");
+            setImage("Police2.png");
             direction = "left";
             //moveDir(2);
 
@@ -109,8 +110,40 @@ public class Enemy extends Mover
     }
     //stops moving and will shoot at player's x,y location at execution 
     public void shootPlayer(){
+        Greenfoot.playSound("enemy_shoot.wav");
+        getWorld().addObject(new EnemyBullet(direction), getX(), getY());
+    }
+    //damages enemy by decreasing hit points, then causes it to switch directions
+    public void damage(int amount){
+        int r = Greenfoot.getRandomNumber(100) + 1;
+        hp -= amount;
+        if(hp <= 0){
+            die();
+        }else if(direction == "up" || direction == "down"){
+            if(r < 50){
+                direction = "right";
+            }else{
+                direction = "left";
+            }
+        }else if(direction == "left" || direction == "right"){
+            if(r < 50){
+                direction = "up";
+            }else{
+                direction = "down";
+            }
+        }
+    }
 
-        
+    public void die(){
+        String sound;
+        int s = Greenfoot.getRandomNumber(3);
+        if(s > 1){
+            sound = "grunt";
+        }else{
+            sound = "groan";
+        }
+        Greenfoot.playSound(sound + ".wav");
+        getWorld().removeObject(this);
     }
 }
 
