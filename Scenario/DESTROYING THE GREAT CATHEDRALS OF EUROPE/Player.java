@@ -47,20 +47,20 @@ public class Player extends Mover
         if(Greenfoot.isKeyDown("left")){
            direction = "left";
            setImage("Cowboy2.png");
-           moveDir(4);
+           moveDir(5);
         }
         if(Greenfoot.isKeyDown("right")){
            direction = "right";
            setImage("Cowboy1.png");
-           moveDir(4);
+           moveDir(5);
         }
         if(Greenfoot.isKeyDown("up")){
             direction = "up";
-            moveDir(4);
+            moveDir(5);
         }
         if(Greenfoot.isKeyDown("down")){
             direction = "down";
-            moveDir(4);
+            moveDir(5);
         }
         if(Greenfoot.isKeyDown("space")){
             

@@ -15,8 +15,9 @@ public class Enemy extends Mover
     private String currentImage;
     private int movement;
     private int hp = 10;
-    private int shootInterval = Greenfoot.getRandomNumber(250) +50;
-
+    private int shootInterval = Greenfoot.getRandomNumber(50) +50;
+    private  int wait = shootInterval;
+    private boolean canMove = true;
     public Enemy(){
 
         axis = getDir();
@@ -37,23 +38,29 @@ public class Enemy extends Mover
     public void act() 
     {
         if(this !=null){
-            if(atWorldEdge()){
+            if(shootInterval > 0 && canMove){
+                shootInterval--;
+             if(atWorldEdge()){
                 turnAway();
             }
             if(checkCollide()){
                 turnAway();
             }
-            if(count == shootInterval){
-                count =0;
-                //Greenfoot.delay(20);
-                shootPlayer();
-                //Greenfoot.delay(20);
-
-            }else{
-                ++count;
-            }
+            
 
             moveDir(movement);
+            return;
+           }else
+           if(shootInterval == 0){
+              canMove = false;
+               shootPlayer();
+               shootInterval = wait;
+               canMove = true;
+               return;
+            }
+            
+            
+           
         }
     }
 
