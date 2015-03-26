@@ -8,8 +8,15 @@ import greenfoot.*;
  */
 public class Player extends Mover
 {
+    int ammo = 15;
+    boolean canShoot;
+    private static final int gunReloadTime = 20;         // The minimum delay between firing the gun.
+    private int reloadDelayCount;
+    
     public Player(){
         setImage("Cowboy2.png");
+        reloadDelayCount = 5;
+        direction = "left";
     }
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
@@ -17,9 +24,10 @@ public class Player extends Mover
      */
     public void act() 
     {
+         reloadDelayCount++;
         checkKeys();
         checkCollide();
-        
+       
       
     }   
 
@@ -43,6 +51,13 @@ public class Player extends Mover
             direction = "down";
             moveDir(4);
         }
+        if(Greenfoot.isKeyDown("space")){
+            //if(canShoot == true){
+                
+                if(ammo != 0 && reloadDelayCount >= gunReloadTime){
+                shoot();
+            }
+        }
     }
     //checks if player is colliding, if it is with an enemy, player dies and respawns
     public void checkCollide(){
@@ -52,7 +67,23 @@ public class Player extends Mover
             
             f.removeObject(this);
            
+        }else if(isTouching(Ammo.class)){
+            ammo += 5;
         }
+    }
+    
+    public boolean canShoot(){
+        if(ammo != 0 && reloadDelayCount >= gunReloadTime){
+                return true;
+        }else{
+        return false;
+    }
+    }
+    public void shoot(){
+        ammo--;
+        reloadDelayCount = 0;
+        Greenfoot.playSound("shoot.wav");
+        getWorld().addObject(new Bullet(direction), getX(), getY());
     }
    }
 

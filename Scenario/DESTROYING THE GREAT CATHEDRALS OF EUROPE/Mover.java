@@ -73,6 +73,7 @@ public class Mover extends Actor
     }
     
     public void moveDir(int speed){
+        
         if(direction == "up"){
             moveUp(speed);
         }
@@ -85,8 +86,8 @@ public class Mover extends Actor
           if(direction == "right"){
             moveRight(speed);
         }
-        
     }
+   
 
     
     /**

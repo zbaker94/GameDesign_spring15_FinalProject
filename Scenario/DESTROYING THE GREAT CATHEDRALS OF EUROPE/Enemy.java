@@ -32,6 +32,7 @@ public class Enemy extends Mover
 
     public void act() 
     {
+        if(this !=null){
         if(atWorldEdge()){
             turnAway();
         }
@@ -47,9 +48,14 @@ public class Enemy extends Mover
         }else{
             ++count;
         }
+       
+        
+           
+        
         moveDir(movement);
-
-    }    
+    }
+    }
+        
 
     //uses a random number to determine which direction the enemy should move
     public String getDir(){
@@ -88,11 +94,13 @@ public class Enemy extends Mover
 
         }else
         if(direction == "left"){
+            setImage("Police1.png");
             direction = "right";
             //moveDir(2);
 
         }else
         if(direction == "right"){
+             setImage("Police2.png");
             direction = "left";
             //moveDir(2);
 
