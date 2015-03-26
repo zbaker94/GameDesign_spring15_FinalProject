@@ -15,5 +15,9 @@ public class Ammo extends Actor
     public void act() 
     {
         // Add your action code here.
-    }    
+    }  
+    public void die(){
+        Greenfoot.playSound("ammo.wav");
+        getWorld().removeObject(this);
+    }
 }

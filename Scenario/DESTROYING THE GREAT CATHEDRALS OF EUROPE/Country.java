@@ -58,7 +58,19 @@ public class Country extends World
         
        addObject(new Cathedral(),x,y);
         }
-        
+        if(actor == "Ammo"){
+            GreenfootImage ammo = new GreenfootImage("ammo.png");
+            int x = Greenfoot.getRandomNumber((450) +1); 
+        int y = Greenfoot.getRandomNumber(500 +1); 
+        while(x - ammo.getWidth() < 0){
+            x = Greenfoot.getRandomNumber((450) +1); 
+        }
+
+        while (y - ammo.getHeight()/2 < 0 || y + ammo.getHeight()/2 > 500){
+            y =  Greenfoot.getRandomNumber(500 +1);
+        }
+            addObject(new Ammo(),x,y);
+        }
     }
 
 }

@@ -80,6 +80,8 @@ public class Player extends Mover
             f.removeObject(this);
            
         }else if(isTouching(Ammo.class)){
+            Ammo a = (Ammo) getOneIntersectingObject(Ammo.class);
+            a.die();
             ammo += 5;
         }else while(isTouching(Cathedral.class)){
             canMove = false;

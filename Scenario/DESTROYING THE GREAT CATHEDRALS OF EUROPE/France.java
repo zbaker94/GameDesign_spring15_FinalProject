@@ -17,8 +17,9 @@ public class France extends Country
      */
     public France()
     { 
-            generateActor("Enemy",2);
-            generateActor("Cathedral",1);
+            generateActor("Enemy",0);
+            generateActor("Cathedral",0);
+            generateActor("Ammo", 2);
             generateActor("Hero",spawnX,spawnY, getAmmo());
         
            }
