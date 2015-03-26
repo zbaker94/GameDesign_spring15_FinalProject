@@ -1,23 +1,35 @@
 #Greenfoot properties
+<<<<<<< HEAD
 #Thu Mar 26 16:02:41 EDT 2015
 target10.editor.width=960
+=======
+#Thu Mar 26 15:46:04 EDT 2015
+>>>>>>> fa7e9071fb3258cd6d388c2c245b52efa71e7ce3
 target2.width=80
 target8.name=Ammo
 target5.naviview.expanded=true
 dependency12.type=UsesDependency
 dependency22.type=UsesDependency
-target7.showInterface=false
 target1.type=ClassTarget
+<<<<<<< HEAD
 mainWindow.height=1050
 class.Pointer.image=anchor.png
+=======
+target7.showInterface=false
+mainWindow.height=1032
+>>>>>>> fa7e9071fb3258cd6d388c2c245b52efa71e7ce3
 target2.editor.y=0
 target6.typeParameters=
 target2.editor.x=960
 dependency9.to=Enemy
 target1.height=50
 class.Enemy.superclass=Mover
+<<<<<<< HEAD
 target8.y=130
+=======
+>>>>>>> fa7e9071fb3258cd6d388c2c245b52efa71e7ce3
 dependency16.type=UsesDependency
+target8.y=10
 class.Bullet.superclass=Mover
 target8.x=190
 dependency21.to=Cathedral
@@ -32,9 +44,9 @@ target4.y=70
 target4.x=160
 dependency10.from=Player
 dependency6.type=UsesDependency
+target4.showInterface=false
 target9.type=ClassTarget
 target9.editor.width=960
-target4.showInterface=false
 dependency20.from=Bullet
 target2.y=10
 target2.x=160
@@ -79,17 +91,21 @@ dependency1.to=Enemy
 target4.editor.x=0
 dependency17.type=UsesDependency
 dependency3.type=UsesDependency
-target6.type=ClassTarget
 target2.height=50
 target2.typeParameters=
+target6.type=ClassTarget
 dependency11.to=Player
-target9.typeParameters=
 dependency11.from=Enemy
+target9.typeParameters=
 dependency7.type=UsesDependency
 target1.naviview.expanded=false
 dependency21.from=Player
+<<<<<<< HEAD
 target10.editor.height=1032
 version=2.7.0
+=======
+version=2.6.0
+>>>>>>> fa7e9071fb3258cd6d388c2c245b52efa71e7ce3
 target5.editor.width=960
 dependency15.from=Bullet
 dependency6.to=Enemy
@@ -98,25 +114,37 @@ dependency1.from=France
 dependency25.from=Player
 target5.editor.y=0
 target5.editor.x=960
+<<<<<<< HEAD
 mainWindow.y=-9
 target5.showInterface=false
 mainWindow.x=-9
+=======
+mainWindow.y=0
+mainWindow.x=0
+target5.showInterface=false
+>>>>>>> fa7e9071fb3258cd6d388c2c245b52efa71e7ce3
 dependency19.from=EnemyBullet
 dependency16.to=EnemyBullet
-target8.showInterface=false
 dependency5.from=Cathedral
-target7.typeParameters=
+target8.showInterface=false
 class.France.superclass=Country
+target7.typeParameters=
 target2.name=France
 dependency9.from=Player
 class.EnemyBullet.image=red-draught.png
+<<<<<<< HEAD
 target6.naviview.expanded=false
 target6.name=Pointer
+=======
+target6.name=EnemyBullet
+target6.naviview.expanded=false
+>>>>>>> fa7e9071fb3258cd6d388c2c245b52efa71e7ce3
 target9.height=50
 target6.editor.y=20
 dependency23.to=Ammo
 target6.editor.x=40
 target5.editor.height=1032
+class.Explosion.superclass=greenfoot.Actor
 dependency10.type=UsesDependency
 dependency20.type=UsesDependency
 class.Pointer.superclass=Mover
@@ -126,12 +154,18 @@ target10.x=10
 dependency2.to=Player
 class.Enemy.image=Police1.png
 dependency14.type=UsesDependency
+<<<<<<< HEAD
 target10.naviview.expanded=false
 target9.y=10
 target9.x=70
 dependency24.type=UsesDependency
 target6.height=50
+=======
+target9.y=130
+target9.x=10
+>>>>>>> fa7e9071fb3258cd6d388c2c245b52efa71e7ce3
 target3.type=ClassTarget
+target6.height=50
 target3.editor.width=960
 dependency12.to=Ammo
 target7.y=190
@@ -139,8 +173,12 @@ target7.x=100
 target2.editor.height=1032
 dependency18.type=UsesDependency
 target5.y=70
+<<<<<<< HEAD
 target7.editor.y=145
+=======
+>>>>>>> fa7e9071fb3258cd6d388c2c245b52efa71e7ce3
 target5.x=70
+target7.editor.y=23
 dependency4.type=UsesDependency
 target7.type=ClassTarget
 target7.editor.x=1005
