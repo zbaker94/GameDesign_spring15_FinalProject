@@ -27,5 +27,8 @@ public class France extends Country
 public int getAmmo(){
     return 8;
 }
+public void GenerateActor(String name, int x, int y){
+   generateActor(name,x,y,0);
+}
    
 }

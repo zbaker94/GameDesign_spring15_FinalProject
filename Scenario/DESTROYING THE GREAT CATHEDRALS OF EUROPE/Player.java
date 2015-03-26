@@ -103,25 +103,11 @@ public class Player extends Mover
             Ammo a = (Ammo) getOneIntersectingObject(Ammo.class);
             a.die();
             ammo += 5;
-        }else while(isTouching(Cathedral.class)){
-            canMove = false;
-            if(direction == "up"){
-                canMove = true;
-                setLocation(getX(),getY() + 10);
+        }else if(isTouching(Cathedral.class)){
+           Cathedral c = (Cathedral) getOneIntersectingObject(Cathedral.class);
+           if(c != null){
+               c.die();
             }
-             if(direction == "down"){
-                  canMove = true;
-                setLocation(getX(),getY() - 10);
-            }
-             if(direction == "left"){
-                  canMove = true;
-                setLocation(getX() +10,getY());
-            }
-             if(direction == "right"){
-                  canMove = true;
-                setLocation(getX() - 10,getY());
-            }
-            
         }
     }
     

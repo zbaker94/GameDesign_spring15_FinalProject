@@ -10,7 +10,7 @@ public class Cathedral extends Actor
 {
     public Cathedral(){
         setImage("St_Peters_Italy.png");
-      
+        
     }
     
     public Cathedral(String img){
@@ -35,7 +35,8 @@ public class Cathedral extends Actor
     public void die(){
         int x = getX();
         int y = getY();
+      
         
-        
+        getWorld().removeObject(this);
     }
 }

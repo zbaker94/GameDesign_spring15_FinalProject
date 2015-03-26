@@ -15,7 +15,7 @@ public class Enemy extends Mover
     private String currentImage;
     private int movement;
     private int hp = 10;
-    private int shootInterval = Greenfoot.getRandomNumber(50) +50;
+    private int shootInterval = Greenfoot.getRandomNumber(70) +50;
     private  int wait = shootInterval;
     private boolean canMove = true;
     public Enemy(){
@@ -27,7 +27,7 @@ public class Enemy extends Mover
             direction = "up";
         }
 
-        movement = Greenfoot.getRandomNumber(4) + 2;
+        movement = Greenfoot.getRandomNumber(2) + 2;
     }
 
     /**
