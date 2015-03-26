@@ -17,10 +17,11 @@ public class France extends Country
      */
     public France()
     { 
-            generateActor("Enemy",0);
-            generateActor("Cathedral",0);
+            generateActor("Enemy",2);
+            generateActor("Cathedral",1);
             generateActor("Ammo", 2);
             generateActor("Hero",spawnX,spawnY, getAmmo());
+            generateActor("Pointer",spawnX - 25, spawnY,0);
         
            }
 public int getAmmo(){

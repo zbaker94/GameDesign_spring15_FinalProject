@@ -88,6 +88,10 @@ public void generateActor(String actor, int x, int y,int ammo){
          Cathedral cath = new Cathedral();
         addObject(cath,x,y);
     }
+    if(actor == "Pointer"){
+        Pointer point = new Pointer();
+        addObject(point,x,y);
+    }
     
 }
 

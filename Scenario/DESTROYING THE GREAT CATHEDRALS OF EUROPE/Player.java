@@ -43,23 +43,45 @@ public class Player extends Mover
 
     //checks to see if directional keys are pressed, and makes movement based on that
     public void checkKeys(){
-       if(canMove){
+      Pointer p = null;
+           if( !getWorld().getObjects(Pointer.class).isEmpty()){
+            p = (Pointer) getWorld().getObjects(Pointer.class).get(0);
+        }
+        if(canMove){
         if(Greenfoot.isKeyDown("left")){
            direction = "left";
+          
            setImage("Cowboy2.png");
+           p.direction = "left";
+           p.setImage("pointer_left.png");
+           p.setLocation(getX() - 25,getY());
+            p.moveDir(5);
            moveDir(5);
+          
         }
         if(Greenfoot.isKeyDown("right")){
            direction = "right";
            setImage("Cowboy1.png");
+           p.direction = "right";
+           p.setImage("pointer_right.png");
+           p.setLocation(getX() + 25,getY());
+            p.moveDir(5);
            moveDir(5);
         }
         if(Greenfoot.isKeyDown("up")){
             direction = "up";
+            p.direction = "up";
+           p.setImage("pointer_up.png");
+           p.setLocation(getX(),getY() - 30);
+            p.moveDir(5);
             moveDir(5);
         }
         if(Greenfoot.isKeyDown("down")){
             direction = "down";
+              p.direction = "down";
+           p.setImage("pointer_down.png");
+           p.setLocation(getX(),getY() + 30);
+            p.moveDir(5);
             moveDir(5);
         }
         if(Greenfoot.isKeyDown("space")){
@@ -74,10 +96,8 @@ public class Player extends Mover
     //checks if player is colliding, if it is with an enemy, player dies 
     public void checkCollide(){
         if(isTouching(Enemy.class)){
-            Greenfoot.playSound("die.wav");
-            World f =  getWorld();
-            
-            f.removeObject(this);
+           
+            die();
            
         }else if(isTouching(Ammo.class)){
             Ammo a = (Ammo) getOneIntersectingObject(Ammo.class);
@@ -115,7 +135,13 @@ public class Player extends Mover
     }
     
     public void die(){
-        getWorld().removeObject(this);;
+         Greenfoot.playSound("die.wav");
+          Pointer p = null;
+           if( !getWorld().getObjects(Pointer.class).isEmpty()){
+            p = (Pointer) getWorld().getObjects(Pointer.class).get(0);
+            p.die();
+        }
+        getWorld().removeObject(this);
     }
    }
 
