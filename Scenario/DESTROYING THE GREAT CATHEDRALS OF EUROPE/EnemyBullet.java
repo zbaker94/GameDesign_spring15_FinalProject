@@ -29,10 +29,14 @@ public class EnemyBullet extends Bullet
      public void checkCollision()
     {
         Player p =(Player)getOneIntersectingObject(Player.class);
+        Cathedral c = (Cathedral)getOneIntersectingObject(Cathedral.class);
         if (p != null){
        Greenfoot.playSound("hit_enemy.wav");
        p.die();
         getWorld().removeObject(this);  // Removes the Shot
+    }
+    if(c != null){
+        getWorld().removeObject(this); // Removes the Shot
     }
 }
 }

@@ -24,6 +24,18 @@ public class Cathedral extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+      checkExplode();  // Add your action code here.
+    }  
+    //checks if the cathedral has been destroyed
+    public void checkExplode(){
+        
+    }
+    
+    //on death, spawns another enemy, then dissapeers
+    public void die(){
+        int x = getX();
+        int y = getY();
+        
+        
+    }
 }

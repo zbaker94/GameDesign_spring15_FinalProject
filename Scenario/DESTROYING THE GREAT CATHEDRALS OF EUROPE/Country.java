@@ -15,8 +15,10 @@ public class Country extends World
      */
     public Country()
     {    
+        
         // Create a new world with 700x500 cells with a cell size of 1x1 pixels.
         super(700, 500, 1); 
+        setPaintOrder(Enemy.class,Player.class,Cathedral.class);
     }
     
     //method for randomly generating an actor
@@ -24,6 +26,7 @@ public class Country extends World
       for(int i = 0; i < count; i++){
       
       if (actor == "Enemy"){
+          
           GreenfootImage agent = new GreenfootImage("Police1.png");
 
         int x = Greenfoot.getRandomNumber((480) +1); 
@@ -35,7 +38,7 @@ public class Country extends World
         while(y < (agent.getHeight()) || y  > 366){
             y = Greenfoot.getRandomNumber(500 +1);
         }
-
+       
         addObject(new Enemy(),x,y);
 
           
@@ -60,10 +63,10 @@ public class Country extends World
 
 }
 //special generateActor for placing an actor at specific location
-public void generateActor(String actor, int x, int y){
+public void generateActor(String actor, int x, int y,int ammo){
      if(actor == "Hero"){
-         Player hero = new Player();
-        addObject(hero,x,y);
+         Player hero = new Player(ammo);
+        addObject(hero,x,y );
     }
      if(actor == "Enemy"){
          Enemy enemy = new Enemy();
@@ -75,4 +78,5 @@ public void generateActor(String actor, int x, int y){
     }
     
 }
+
 }

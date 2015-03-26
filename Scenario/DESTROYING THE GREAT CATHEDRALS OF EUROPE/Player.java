@@ -8,15 +8,25 @@ import greenfoot.*;
  */
 public class Player extends Mover
 {
-    int ammo = 15;
+    int ammo = 0;
     boolean canShoot;
     private static final int gunReloadTime = 20;         // The minimum delay between firing the gun.
     private int reloadDelayCount;
+    private boolean canMove = true;
     
     public Player(){
+       World f = (France) getWorld();
+        ammo = 3;
+              reloadDelayCount = 5;
+        direction = "left";
+      
+    }
+     public Player(int ammo){
         setImage("Cowboy2.png");
+         this.ammo = ammo;
         reloadDelayCount = 5;
         direction = "left";
+      
     }
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
@@ -33,6 +43,7 @@ public class Player extends Mover
 
     //checks to see if directional keys are pressed, and makes movement based on that
     public void checkKeys(){
+       if(canMove){
         if(Greenfoot.isKeyDown("left")){
            direction = "left";
            setImage("Cowboy2.png");
@@ -59,6 +70,7 @@ public class Player extends Mover
             }
         }
     }
+}
     //checks if player is colliding, if it is with an enemy, player dies 
     public void checkCollide(){
         if(isTouching(Enemy.class)){
@@ -69,6 +81,25 @@ public class Player extends Mover
            
         }else if(isTouching(Ammo.class)){
             ammo += 5;
+        }else while(isTouching(Cathedral.class)){
+            canMove = false;
+            if(direction == "up"){
+                canMove = true;
+                setLocation(getX(),getY() + 10);
+            }
+             if(direction == "down"){
+                  canMove = true;
+                setLocation(getX(),getY() - 10);
+            }
+             if(direction == "left"){
+                  canMove = true;
+                setLocation(getX() +10,getY());
+            }
+             if(direction == "right"){
+                  canMove = true;
+                setLocation(getX() - 10,getY());
+            }
+            
         }
     }
     

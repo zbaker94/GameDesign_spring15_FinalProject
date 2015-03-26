@@ -10,17 +10,20 @@ public class France extends Country
 {
  static int spawnX =  578;
  static int spawnY = 305;
+
     /**
      * Constructor for objects of class France.
      * 
      */
     public France()
     { 
-            generateActor("Enemy",3);
-            generateActor("Cathedral",0);
-            generateActor("Hero",spawnX,spawnY);
+            generateActor("Enemy",2);
+            generateActor("Cathedral",1);
+            generateActor("Hero",spawnX,spawnY, getAmmo());
         
            }
-
+public int getAmmo(){
+    return 8;
+}
    
 }
