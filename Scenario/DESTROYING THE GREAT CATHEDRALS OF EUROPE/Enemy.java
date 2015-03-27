@@ -117,7 +117,7 @@ public class Enemy extends Mover
     //stops moving and will shoot at player's direction location at execution 
     public void shootPlayer(){
         Greenfoot.playSound("enemy_shoot.wav");
-        getWorld().addObject(new EnemyBullet(getPlayerRelativeDirection(getX(),getY())), getX(), getY());
+        getWorld().addObject(new EnemyBullet(getPlayerRelativeDirection(getX(),getY() + 20)), getX(), getY());
     }
     //damages enemy by decreasing hit points, then causes it to switch directions
     public void damage(int amount){
