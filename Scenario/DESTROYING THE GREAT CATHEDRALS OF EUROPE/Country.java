@@ -44,6 +44,17 @@ public class Country extends World
           
         }
         if(actor == "Cathedral"){
+            
+             int rando = Greenfoot.getRandomNumber(3) + 1;
+            String img = "tower";
+            if(rando <= 3 && rando > 2){
+                img = "spire";
+            }else if(rando <=2 && rando > 1){
+                img = "dome";
+            }else{
+                img = "tower";
+            }
+            
             GreenfootImage cathedral = new GreenfootImage("St_Peters_Italy.png");
         int x = Greenfoot.getRandomNumber((450) +1); 
         int y = Greenfoot.getRandomNumber(500 +1); 
@@ -56,8 +67,9 @@ public class Country extends World
         }
        
         
-       addObject(new Cathedral(),x,y);
-        }
+       addObject(new Cathedral(img),x,y);
+        
+    }
         if(actor == "Ammo"){
             GreenfootImage ammo = new GreenfootImage("ammo.png");
             int x = Greenfoot.getRandomNumber((450) +1); 

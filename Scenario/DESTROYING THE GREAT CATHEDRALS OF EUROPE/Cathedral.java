@@ -14,7 +14,7 @@ public class Cathedral extends Actor
     }
     
     public Cathedral(String img){
-        setImage(img);
+        setImage(img + ".png");
       
     }
     
@@ -36,7 +36,7 @@ public class Cathedral extends Actor
         int x = getX();
         int y = getY();
       
-        
+        getWorld().addObject(new Enemy(),x,y);
         getWorld().removeObject(this);
     }
 }
