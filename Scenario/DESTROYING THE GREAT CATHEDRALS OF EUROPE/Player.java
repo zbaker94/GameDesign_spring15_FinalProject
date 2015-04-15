@@ -128,6 +128,9 @@ public class Player extends Mover
             p.die();
         }
         getWorld().removeObject(this);
+        // d black 6 apr 15
+        // Display loss banner
+        // stop game
     }
    }
 
