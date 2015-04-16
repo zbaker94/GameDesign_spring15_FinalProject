@@ -35,8 +35,8 @@ public class Cathedral extends Actor
     public void die(){
         int x = getX();
         int y = getY();
-      
-        getWorld().addObject(new Enemy(),x,y);
+        
+        getWorld().addObject(new Explosion(),x,y);
         getWorld().removeObject(this);
     }
 }

@@ -10,7 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
 public class Explosion extends Actor
 {
     /** How many images should be used in the animation of the explostion */
-    private final static int IMAGE_COUNT= 12;
+    private final static int IMAGE_COUNT= 15;
     
     /** 
      * The images in the explosion. This is static so the images are not
@@ -24,6 +24,8 @@ public class Explosion extends Actor
     /** How much do we increment the index in the explosion animation. */
     private int increment=1;
     
+    private int I = 9999;
+    
     /**
      * Create a new explosion.
      */
@@ -31,7 +33,7 @@ public class Explosion extends Actor
     {
         initializeImages();
         setImage(images[0]);
-        Greenfoot.playSound("MetalExplosion.wav");
+        //Greenfoot.playSound("MetalExplosion.wav");
     }    
     
     /** 
@@ -40,13 +42,14 @@ public class Explosion extends Actor
     public synchronized static void initializeImages() 
     {
         if(images == null) {
-            GreenfootImage baseImage = new GreenfootImage("explosion-big.png");
+            String imageName = "explosionNULL";
+            
             images = new GreenfootImage[IMAGE_COUNT];
             for (int i = 0; i < IMAGE_COUNT; i++)
             {
-                int size = (i+1) * ( baseImage.getWidth() / IMAGE_COUNT );
-                images[i] = new GreenfootImage(baseImage);
-                images[i].scale(size, size);
+                imageName = "explosion" + i + ".png";
+                GreenfootImage image = new GreenfootImage(imageName);
+                images[i] = image;
             }
         }
     }
@@ -62,10 +65,9 @@ public class Explosion extends Actor
         if(imageNo >= IMAGE_COUNT) {
             increment = -increment;
             imageNo += increment;
-        }
-        
-        if(imageNo < 0) {
             getWorld().removeObject(this);
         }
+        
+        
     }
 }
