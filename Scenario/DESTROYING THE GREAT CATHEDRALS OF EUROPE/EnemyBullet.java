@@ -11,6 +11,7 @@ public class EnemyBullet extends Bullet
     int speed = 8;
     public EnemyBullet(String direction){
         super(direction);
+        
     }
     /**
      * Act - do whatever the EnemyBullet wants to do. This method is called whenever

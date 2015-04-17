@@ -8,8 +8,18 @@ import greenfoot.*;
  */
 public class Cathedral extends Actor
 {
+    int count =0;
     public Cathedral(){
-        setImage("St_Peters_Italy.png");
+        int rando = Greenfoot.getRandomNumber(3) + 1;
+            String img = "tower";
+            if(rando <= 3 && rando > 2){
+                img = "spire";
+            }else if(rando <=2 && rando > 1){
+                img = "dome";
+            }else{
+                img = "tower";
+            }
+        setImage(img+".png");
         
     }
     
@@ -24,13 +34,24 @@ public class Cathedral extends Actor
      */
     public void act() 
     {
+        count++;
+        if(count <=2){
+      checkOverlap();  
+    }
       checkExplode();  // Add your action code here.
     }  
     //checks if the cathedral has been destroyed
     public void checkExplode(){
         
     }
-    
+    public void checkOverlap(){
+        if(getOneIntersectingObject(Cathedral.class) != null || getOneIntersectingObject(Enemy.class) != null){
+            int x = Greenfoot.getRandomNumber(getWorld().getWidth() - 200);
+            int y =Greenfoot.getRandomNumber(getWorld().getHeight());
+            getWorld().addObject(new Cathedral(),x,y);
+            getWorld().removeObject(this);
+        }
+    }
     //on death, spawns another enemy, then dissapeers
     public void die(){
        
