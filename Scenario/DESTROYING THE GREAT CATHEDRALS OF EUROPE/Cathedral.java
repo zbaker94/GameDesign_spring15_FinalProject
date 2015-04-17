@@ -45,7 +45,7 @@ public class Cathedral extends Actor
         
     }
     public void checkOverlap(){
-        if(getOneIntersectingObject(Cathedral.class) != null || getOneIntersectingObject(Enemy.class) != null){
+        if(getOneIntersectingObject(null) != null ){
             int x = Greenfoot.getRandomNumber(getWorld().getWidth() - 200);
             int y =Greenfoot.getRandomNumber(getWorld().getHeight());
             getWorld().addObject(new Cathedral(),x,y);
