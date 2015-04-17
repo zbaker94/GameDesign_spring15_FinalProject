@@ -30,7 +30,7 @@ public class Bullet extends Mover
         getWorld().removeObject(this);  // Removes the Shot
     }
     if(c != null){
-        getWorld().removeObject(this); // Removes the Shot
+       // getWorld().removeObject(this); // Removes the Shot
     }
         
     }

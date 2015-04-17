@@ -35,9 +35,9 @@ public class EnemyBullet extends Bullet
        p.die();
         getWorld().removeObject(this);  // Removes the Shot
     }
-    if(c != null){
-        getWorld().removeObject(this); // Removes the Shot
-    }
+//     if(c != null){
+//         getWorld().removeObject(this); // Removes the Shot
+//     }
 }
 }
 

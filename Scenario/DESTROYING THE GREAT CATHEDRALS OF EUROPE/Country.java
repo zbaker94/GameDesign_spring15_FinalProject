@@ -18,7 +18,7 @@ public class Country extends World
         
         // Create a new world with 700x500 cells with a cell size of 1x1 pixels.
         super(700, 500, 1); 
-        setPaintOrder(Explosion.class,Enemy.class,Player.class,Bomb.class,Cathedral.class);
+        setPaintOrder(Explosion.class,Bullet.class,Enemy.class,Player.class,Bomb.class,Cathedral.class);
     }
     
     //method for randomly generating an actor
