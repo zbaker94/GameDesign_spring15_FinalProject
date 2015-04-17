@@ -45,9 +45,16 @@ public class Cathedral extends Actor
         
     }
     public void checkOverlap(){
+        GreenfootImage cathedral = new GreenfootImage("spire.png");
         if(getOneIntersectingObject(null) != null ){
             int x = Greenfoot.getRandomNumber(getWorld().getWidth() - 200);
             int y =Greenfoot.getRandomNumber(getWorld().getHeight());
+            while(x-(cathedral.getWidth()/2) <=0 || x+(cathedral.getWidth()/2) >= getWorld().getWidth()-200){
+                x = Greenfoot.getRandomNumber(getWorld().getWidth() - 200);
+            }
+            while(y - (cathedral.getHeight()/2) <=0 || y+(cathedral.getHeight()/2) >= getWorld().getHeight()){
+                y =Greenfoot.getRandomNumber(getWorld().getHeight());
+            }
             getWorld().addObject(new Cathedral(),x,y);
             getWorld().removeObject(this);
         }
