@@ -52,7 +52,7 @@ public class Player extends Mover
             p = (Pointer) getWorld().getObjects(Pointer.class).get(0);
         }
         if(canMove){
-        if(Greenfoot.isKeyDown("left")){
+        if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a")){
            direction = "left";
           
            setImage("Cowboy2.png");
@@ -63,7 +63,7 @@ public class Player extends Mover
            moveDir(5);
           
         }
-        if(Greenfoot.isKeyDown("right")){
+        if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d")){
            direction = "right";
            setImage("Cowboy1.png");
            p.direction = "right";
@@ -72,7 +72,7 @@ public class Player extends Mover
             p.moveDir(5);
            moveDir(5);
         }
-        if(Greenfoot.isKeyDown("up")){
+        if(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w")){
             direction = "up";
             p.direction = "up";
            p.setImage("pointer_up.png");
@@ -80,7 +80,7 @@ public class Player extends Mover
             p.moveDir(5);
             moveDir(5);
         }
-        if(Greenfoot.isKeyDown("down")){
+        if(Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s")){
             direction = "down";
               p.direction = "down";
            p.setImage("pointer_down.png");
