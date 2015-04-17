@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Player()
-comment1.params=ammo
-comment1.target=Player(int)
+comment1.params=ammo\ bomb
+comment1.target=Player(int,\ int)
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\n\ Act\ -\ do\ whatever\ the\ Player\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
@@ -13,5 +13,7 @@ comment4.target=void\ checkCollide()
 comment5.params=
 comment5.target=void\ shoot()
 comment6.params=
-comment6.target=void\ die()
-numComments=7
+comment6.target=void\ bomb()
+comment7.params=
+comment7.target=void\ die()
+numComments=8

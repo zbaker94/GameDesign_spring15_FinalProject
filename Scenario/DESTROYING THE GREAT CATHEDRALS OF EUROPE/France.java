@@ -20,15 +20,15 @@ public class France extends Country
             generateActor("Enemy",1);
             generateActor("Cathedral",3);
             generateActor("Ammo", 0);
-            generateActor("Hero",spawnX,spawnY, getAmmo());
-            generateActor("Pointer",spawnX - 25, spawnY,0);
+            generateActor("Hero",spawnX,spawnY, getAmmo(), 3);
+            generateActor("Pointer",spawnX - 25, spawnY,0,0);
         
            }
 public int getAmmo(){
     return 8;
 }
 public void GenerateActor(String name, int x, int y){
-   generateActor(name,x,y,0);
+   generateActor(name,x,y,0,0);
 }
    
 }

@@ -18,7 +18,7 @@ public class Country extends World
         
         // Create a new world with 700x500 cells with a cell size of 1x1 pixels.
         super(700, 500, 1); 
-        setPaintOrder(Enemy.class,Player.class,Cathedral.class);
+        setPaintOrder(Explosion.class,Enemy.class,Player.class,Bomb.class,Cathedral.class);
     }
     
     //method for randomly generating an actor
@@ -87,9 +87,9 @@ public class Country extends World
 
 }
 //special generateActor for placing an actor at specific location
-public void generateActor(String actor, int x, int y,int ammo){
+public void generateActor(String actor, int x, int y,int ammo, int bomb){
      if(actor == "Hero"){
-         Player hero = new Player(ammo);
+         Player hero = new Player(ammo, bomb);
         addObject(hero,x,y );
     }
      if(actor == "Enemy"){

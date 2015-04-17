@@ -33,10 +33,7 @@ public class Cathedral extends Actor
     
     //on death, spawns another enemy, then dissapeers
     public void die(){
-        int x = getX();
-        int y = getY();
-        
-        getWorld().addObject(new Explosion(),x,y);
+       
         getWorld().removeObject(this);
     }
 }

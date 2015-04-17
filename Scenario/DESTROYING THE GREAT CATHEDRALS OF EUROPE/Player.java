@@ -9,21 +9,25 @@ import greenfoot.*;
 public class Player extends Mover
 {
     int ammo = 0;
+    int bombs =0;
     boolean canShoot;
     private static final int gunReloadTime = 20;         // The minimum delay between firing the gun.
+    private static final int bombReloadTime = 50;
     private int reloadDelayCount;
     private boolean canMove = true;
     
     public Player(){
        World f = (France) getWorld();
         ammo = 3;
+        bombs = 2;
               reloadDelayCount = 5;
         direction = "left";
       
     }
-     public Player(int ammo){
+     public Player(int ammo, int bomb ){
         setImage("Cowboy2.png");
          this.ammo = ammo;
+         bombs = bomb;
         reloadDelayCount = 5;
         direction = "left";
       
@@ -91,6 +95,13 @@ public class Player extends Mover
                 shoot();
             }
         }
+         if(Greenfoot.isKeyDown("shift")){
+            
+                
+                if(bombs != 0 && reloadDelayCount >= bombReloadTime){
+                bomb();
+            }
+        }
     }
 }
     //checks if player is colliding, if it is with an enemy, player dies 
@@ -103,10 +114,32 @@ public class Player extends Mover
             Ammo a = (Ammo) getOneIntersectingObject(Ammo.class);
             a.die();
             ammo += 5;
-        }else if(isTouching(Cathedral.class)){
-           Cathedral c = (Cathedral) getOneIntersectingObject(Cathedral.class);
-           if(c != null){
-               c.die();
+//         }else if(isTouching(Cathedral.class)){
+//           canMove = false;
+//           if(direction == "left"){
+//               moveRight(5);
+//               canMove=true;
+//             }
+//              if(direction == "right"){
+//               moveLeft(5);
+//               canMove=true;
+//             } 
+//             if(direction == "up"){
+//               moveDown(5);
+//               canMove=true;
+//             } 
+//             if(direction == "down"){
+//               moveUp(5);
+//               canMove=true;
+//             }
+            
+          
+        }
+        else if(isTouching(Explosion.class)){
+           Explosion e = (Explosion) getOneIntersectingObject(Explosion.class);
+           if(e != null){
+               die();
+               
             }
         }
     }
@@ -114,10 +147,17 @@ public class Player extends Mover
     
     //creates a bulllet that moves in the same direction as the player
     public void shoot(){
+       
         ammo--;
         reloadDelayCount = 0;
         Greenfoot.playSound("shoot.wav");
         getWorld().addObject(new Bullet(direction), getX(), getY());
+    }
+    
+    public void bomb(){
+        bombs--;
+        reloadDelayCount = 0;
+        getWorld().addObject(new Bomb(), getX(), getY());
     }
     
     public void die(){

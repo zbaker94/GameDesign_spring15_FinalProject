@@ -8,12 +8,35 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bomb extends Actor
 {
+    int counter = 0;
     /**
      * Act - do whatever the Bomb wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
-}
+    public Bomb(){
+        setImage("bomb1.png");
+    }
+   public void act()
+    { 
+        counter++;
+        if (counter == 200){
+            Cathedral c = (Cathedral) getOneIntersectingObject(Cathedral.class);
+            if(c != null)
+            c.die();
+             int x = getX();
+        int y = getY();
+        
+        getWorld().addObject(new Explosion(),x,y);
+            getWorld().removeObject(this);
+        }
+        
+    }
+    
+    
+   
+    
+        
+        
+    }
+
+
