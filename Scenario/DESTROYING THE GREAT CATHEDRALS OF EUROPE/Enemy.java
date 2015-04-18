@@ -118,7 +118,9 @@ public class Enemy extends Mover
     public void shootPlayer(){
         Greenfoot.playSound("enemy_shoot.wav");
         getWorld().addObject(new EnemyBullet(getPlayerRelativeDirection(getX(),getY() + 20)), getX(), getY());
-    }
+        
+        }
+    
     //damages enemy by decreasing hit points, then causes it to switch directions
     public void damage(int amount){
         int r = Greenfoot.getRandomNumber(100) + 1;
