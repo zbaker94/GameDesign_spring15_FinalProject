@@ -37,7 +37,10 @@ public class Enemy extends Mover
 
     public void act() 
     {
+        
+      
         if(this !=null){
+            
             if(shootInterval > 0 && canMove){
                 shootInterval--;
              if(atWorldEdge()){
@@ -49,19 +52,27 @@ public class Enemy extends Mover
             
 
             moveDir(movement);
-            return;
+            
            }else
            if(shootInterval == 0){
               canMove = false;
                shootPlayer();
                shootInterval = wait;
                canMove = true;
-               return;
+               
             }
-            
+              if(isTouching(Explosion.class)){
+           Explosion e = (Explosion) getOneIntersectingObject(Explosion.class);
+           if(e != null){
+               die();
+               
+            }
+        }
             
            
         }
+        
+        
     }
 
     //uses a random number to determine which direction the enemy should move
@@ -118,7 +129,9 @@ public class Enemy extends Mover
     public void shootPlayer(){
         Greenfoot.playSound("enemy_shoot.wav");
         getWorld().addObject(new EnemyBullet(getPlayerRelativeDirection(getX(),getY() + 20)), getX(), getY());
-    }
+        
+        }
+    
     //damages enemy by decreasing hit points, then causes it to switch directions
     public void damage(int amount){
         int r = Greenfoot.getRandomNumber(100) + 1;

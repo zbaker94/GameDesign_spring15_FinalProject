@@ -9,21 +9,26 @@ import greenfoot.*;
 public class Player extends Mover
 {
     int ammo = 0;
+    int bombs =0;
     boolean canShoot;
     private static final int gunReloadTime = 20;         // The minimum delay between firing the gun.
+    private static final int bombReloadTime = 50;
     private int reloadDelayCount;
     private boolean canMove = true;
+    private int currentLevel = 1;
     
     public Player(){
        World f = (France) getWorld();
         ammo = 3;
+        bombs = 2;
               reloadDelayCount = 5;
         direction = "left";
       
     }
-     public Player(int ammo){
+     public Player(int ammo, int bomb ){
         setImage("Cowboy2.png");
          this.ammo = ammo;
+         bombs = bomb;
         reloadDelayCount = 5;
         direction = "left";
       
@@ -37,6 +42,7 @@ public class Player extends Mover
          reloadDelayCount++;
         checkKeys();
         checkCollide();
+        checkEdge();
        
       
     }   
@@ -48,7 +54,7 @@ public class Player extends Mover
             p = (Pointer) getWorld().getObjects(Pointer.class).get(0);
         }
         if(canMove){
-        if(Greenfoot.isKeyDown("left")){
+        if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a")){
            direction = "left";
           
            setImage("Cowboy2.png");
@@ -59,7 +65,7 @@ public class Player extends Mover
            moveDir(5);
           
         }
-        if(Greenfoot.isKeyDown("right")){
+        if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d")){
            direction = "right";
            setImage("Cowboy1.png");
            p.direction = "right";
@@ -68,7 +74,7 @@ public class Player extends Mover
             p.moveDir(5);
            moveDir(5);
         }
-        if(Greenfoot.isKeyDown("up")){
+        if(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w")){
             direction = "up";
             p.direction = "up";
            p.setImage("pointer_up.png");
@@ -76,7 +82,7 @@ public class Player extends Mover
             p.moveDir(5);
             moveDir(5);
         }
-        if(Greenfoot.isKeyDown("down")){
+        if(Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s")){
             direction = "down";
               p.direction = "down";
            p.setImage("pointer_down.png");
@@ -91,6 +97,13 @@ public class Player extends Mover
                 shoot();
             }
         }
+         if(Greenfoot.isKeyDown("shift")){
+            
+                
+                if(bombs != 0 && reloadDelayCount >= bombReloadTime){
+                bomb();
+            }
+        }
     }
 }
     //checks if player is colliding, if it is with an enemy, player dies 
@@ -103,10 +116,32 @@ public class Player extends Mover
             Ammo a = (Ammo) getOneIntersectingObject(Ammo.class);
             a.die();
             ammo += 5;
-        }else if(isTouching(Cathedral.class)){
-           Cathedral c = (Cathedral) getOneIntersectingObject(Cathedral.class);
-           if(c != null){
-               c.die();
+//         }else if(isTouching(Cathedral.class)){
+//           canMove = false;
+//           if(direction == "left"){
+//               moveRight(5);
+//               canMove=true;
+//             }
+//              if(direction == "right"){
+//               moveLeft(5);
+//               canMove=true;
+//             } 
+//             if(direction == "up"){
+//               moveDown(5);
+//               canMove=true;
+//             } 
+//             if(direction == "down"){
+//               moveUp(5);
+//               canMove=true;
+//             }
+            
+          
+        }
+        else if(isTouching(Explosion.class)){
+           Explosion e = (Explosion) getOneIntersectingObject(Explosion.class);
+           if(e != null){
+               die();
+               
             }
         }
     }
@@ -114,10 +149,18 @@ public class Player extends Mover
     
     //creates a bulllet that moves in the same direction as the player
     public void shoot(){
+       
         ammo--;
         reloadDelayCount = 0;
         Greenfoot.playSound("shoot.wav");
         getWorld().addObject(new Bullet(direction), getX(), getY());
+    }
+    
+    public void bomb(){
+        Greenfoot.playSound("drop.wav");
+        bombs--;
+        reloadDelayCount = 0;
+        getWorld().addObject(new Bomb(), getX(), getY());
     }
     
     public void die(){
@@ -128,6 +171,39 @@ public class Player extends Mover
             p.die();
         }
         getWorld().removeObject(this);
+        // d black 6 apr 15
+        // Display loss banner
+        // stop game
     }
-   }
+    public void checkEdge(){
+        if(getWorld().getObjects(Cathedral.class).size() == 0){
+            if(getX() <= (20)){
+                 
+            if (currentLevel == 1) {
+                currentLevel = 2;
+                getWorld().removeObject(this);
+                Greenfoot.setWorld(new Germany(this));
+            }
+            else if(currentLevel == 2){
+                
+                    currentLevel = 3;
+                getWorld().removeObject(this);
+                Greenfoot.setWorld(new France());
+            }
+            }else if(currentLevel == 3){
+                
+                    currentLevel = 4;
+                getWorld().removeObject(this);
+                Greenfoot.setWorld(new France());
+            }
+            else if(currentLevel == 4){
+                
+                //code for ending game
+            }
+       } 
+                
+            
+        }
+    }
+   
 
