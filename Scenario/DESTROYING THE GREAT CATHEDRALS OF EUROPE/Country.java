@@ -92,6 +92,19 @@ public class Country extends World
                 }
                 addObject(new Ammo(),x,y);
             }
+            if(actor == "Bomb"){
+                GreenfootImage bomb = new GreenfootImage("bomb2.png");
+                int x = Greenfoot.getRandomNumber((450) +1); 
+                int y = Greenfoot.getRandomNumber(500 +1); 
+                while(x - bomb.getWidth() < 0){
+                    x = Greenfoot.getRandomNumber((450) +1); 
+                }
+
+                while (y - bomb.getHeight()/2 < 0 || y + bomb.getHeight()/2 > 500){
+                    y =  Greenfoot.getRandomNumber(500 +1);
+                }
+                addObject(new deadBomb(),x,y);
+            }
         }
 
     }

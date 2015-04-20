@@ -18,7 +18,8 @@ public class Germany extends Country
     public Germany(Player p)
     { 
             generateActor("Enemy",2);
-            generateActor("Cathedral",3);
+            generateActor("Cathedral",4);
+            generateActor("Bomb",4);
             generateActor("Ammo", 2);
             addObject(p,spawnX,spawnY);
             generateActor("Pointer",spawnX - 25, spawnY,0,0);
