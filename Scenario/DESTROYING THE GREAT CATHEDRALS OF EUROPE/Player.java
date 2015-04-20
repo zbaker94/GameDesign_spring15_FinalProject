@@ -15,6 +15,7 @@ public class Player extends Mover
     private static final int bombReloadTime = 50;
     private int reloadDelayCount;
     private boolean canMove = true;
+    private int currentLevel = 1;
     
     public Player(){
        World f = (France) getWorld();
@@ -41,6 +42,7 @@ public class Player extends Mover
          reloadDelayCount++;
         checkKeys();
         checkCollide();
+        checkEdge();
        
       
     }   
@@ -173,5 +175,34 @@ public class Player extends Mover
         // Display loss banner
         // stop game
     }
-   }
+    public void checkEdge(){
+        if(getWorld().getObjects(Cathedral.class) == null){
+            if(getX() <= (20)){
+                 
+            if (currentLevel == 1) {
+                currentLevel = 2;
+                getWorld().removeObject(this);
+                Greenfoot.setWorld(new France());
+            }
+            else if(currentLevel == 2){
+                
+                    currentLevel = 3;
+                getWorld().removeObject(this);
+                Greenfoot.setWorld(new France());
+            }
+            }else if(currentLevel == 3){
+                
+                    currentLevel = 4;
+                getWorld().removeObject(this);
+                Greenfoot.setWorld(new France());
+            }
+        } else if(currentLevel == 4){
+                
+                //code for ending game
+            }
+                
+            
+        }
+    }
+   
 
