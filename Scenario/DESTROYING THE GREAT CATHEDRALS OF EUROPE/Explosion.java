@@ -58,7 +58,7 @@ public class Explosion extends Actor
      * Explode!
      */
     public void act()
-    { 
+    {  
         setImage(images[imageNo]);
 
         imageNo += increment;
@@ -67,7 +67,7 @@ public class Explosion extends Actor
             imageNo += increment;
             getWorld().removeObject(this);
         }
-        
+       
         
     }
 }

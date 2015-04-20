@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class EnemyBullet extends Bullet
 {
-    int speed = 8;
+    int speed = 10;
     public EnemyBullet(String direction){
         super(direction);
         if(direction == "up" || direction == "down") {
