@@ -46,9 +46,9 @@ public class Enemy extends Mover
              if(atWorldEdge()){
                 turnAway();
             }
-            if(checkCollide()){
-                turnAway();
-            }
+            checkTurn();
+                
+            
             
 
             moveDir(movement);
@@ -61,15 +61,8 @@ public class Enemy extends Mover
                canMove = true;
                
             }
-              if(isTouching(Explosion.class)){
-           Explosion e = (Explosion) getOneIntersectingObject(Explosion.class);
-           if(e != null){
-               die();
-               
-            }
-        }
-            
-           
+             
+           checkCollide();
         }
         
         
@@ -92,12 +85,37 @@ public class Enemy extends Mover
         return direction;
     }
     //returns whether this is colliding with any object
-    public boolean checkCollide(){
+    public boolean checkTurn(){
         if(isTouching(Player.class) || isTouching(Cathedral.class)){
+            turnAway();
             return true;
         }else{
             return false;
         }
+    }
+    public void checkCollide(){
+         if(isTouching(Explosion.class)){
+           Explosion e = (Explosion) getOneIntersectingObject(Explosion.class);
+           if(e != null){
+               die();
+               
+            }
+        }
+         if(isTouching(Bomb.class)){
+           Bomb e = (Bomb) getOneIntersectingObject(Bomb.class);
+           if(e != null){
+              int x = e.getX();
+              int y = e.getY();
+              Greenfoot.playSound("defuse.wav");
+             getWorld().removeObject(e);
+              getWorld().addObject(new deadBomb(),x,y);
+              
+             
+               
+            }
+        }
+            
+            
     }
 
     //turns the character in opposite  direction
@@ -152,6 +170,18 @@ public class Enemy extends Mover
             sound = "groan";
         }
         Greenfoot.playSound(sound + ".wav");
+        
+       
+        int r = Greenfoot.getRandomNumber(2);
+        int x = getX();
+        int y = getY();
+        if(r == 0){
+        
+        getWorld().addObject(new deadBomb(),x,y);
+        }else if(r == 1){
+            getWorld().addObject(new Ammo(),x,y);
+            }
+        
         getWorld().removeObject(this);
     }
 
