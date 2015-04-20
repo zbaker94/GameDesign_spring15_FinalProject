@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=p
+comment0.target=Germany(Player)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ France.\n\ \n
+comment1.params=
+comment1.target=int\ getAmmo()
+comment2.params=name\ x\ y
+comment2.target=void\ GenerateActor(java.lang.String,\ int,\ int)
+numComments=3

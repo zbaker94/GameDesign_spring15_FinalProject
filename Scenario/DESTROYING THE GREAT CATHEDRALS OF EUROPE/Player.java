@@ -176,13 +176,13 @@ public class Player extends Mover
         // stop game
     }
     public void checkEdge(){
-        if(getWorld().getObjects(Cathedral.class) == null){
+        if(getWorld().getObjects(Cathedral.class).size() == 0){
             if(getX() <= (20)){
                  
             if (currentLevel == 1) {
                 currentLevel = 2;
                 getWorld().removeObject(this);
-                Greenfoot.setWorld(new France());
+                Greenfoot.setWorld(new Germany(this));
             }
             else if(currentLevel == 2){
                 
@@ -196,10 +196,11 @@ public class Player extends Mover
                 getWorld().removeObject(this);
                 Greenfoot.setWorld(new France());
             }
-        } else if(currentLevel == 4){
+            else if(currentLevel == 4){
                 
                 //code for ending game
             }
+       } 
                 
             
         }
