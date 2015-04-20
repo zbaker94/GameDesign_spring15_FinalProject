@@ -155,6 +155,7 @@ public class Player extends Mover
     }
     
     public void bomb(){
+        Greenfoot.playSound("drop.wav");
         bombs--;
         reloadDelayCount = 0;
         getWorld().addObject(new Bomb(), getX(), getY());
