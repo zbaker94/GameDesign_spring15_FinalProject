@@ -115,27 +115,8 @@ public class Player extends Mover
         }else if(isTouching(Ammo.class)){
             Ammo a = (Ammo) getOneIntersectingObject(Ammo.class);
             a.die();
-            ammo += 5;
-//         }else if(isTouching(Cathedral.class)){
-//           canMove = false;
-//           if(direction == "left"){
-//               moveRight(5);
-//               canMove=true;
-//             }
-//              if(direction == "right"){
-//               moveLeft(5);
-//               canMove=true;
-//             } 
-//             if(direction == "up"){
-//               moveDown(5);
-//               canMove=true;
-//             } 
-//             if(direction == "down"){
-//               moveUp(5);
-//               canMove=true;
-//             }
-            
-          
+            ammo += 3;
+
         }
         else if(isTouching(Explosion.class)){
            Explosion e = (Explosion) getOneIntersectingObject(Explosion.class);
@@ -143,6 +124,13 @@ public class Player extends Mover
                die();
                
             }
+        }
+        else if(isTouching(deadBomb.class)){
+            deadBomb a = (deadBomb) getOneIntersectingObject(deadBomb.class);
+            Greenfoot.playSound("ammo.wav");
+            getWorld().removeObject(a);
+            bombs++;
+
         }
     }
     
@@ -177,6 +165,9 @@ public class Player extends Mover
     }
     public void checkEdge(){
         if(getWorld().getObjects(Cathedral.class).size() == 0){
+            getWorld().addObject(new Arrow(),80,getWorld().getHeight()/2);
+          
+            
             if(getX() <= (20)){
                  
             if (currentLevel == 1) {

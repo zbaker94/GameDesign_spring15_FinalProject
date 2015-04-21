@@ -21,16 +21,19 @@ public class Country extends World
 
         // Create a new world with 700x500 cells with a cell size of 1x1 pixels.
         super(700, 500, 1); 
-        setPaintOrder(Explosion.class,Bullet.class,Enemy.class,Player.class,Bomb.class,Cathedral.class);
-        bombsUsed = new Counter("Bombs used: ");
-        timer = new Counter("Time: ");
-        addObject(bombsUsed, 100,getHeight()-60);
+        setPaintOrder(Counter.class, Arrow.class, Explosion.class,Bullet.class,Enemy.class,Player.class,Bomb.class,Cathedral.class);
+        bombsUsed = new Counter("Bombs: ");
+        timer = new Counter("Ammo: ");
+        addObject(bombsUsed, 75,getHeight()-60);
         addObject(timer, 70,getHeight()-20);
     }
 
         public void updateHUD(String barrels, String bombs, String dist, String time) {
-        bombsUsed.set(bombs);
-        timer.set(time);
+       
+    bombsUsed.set(bombs);
+        timer.set(ammo);
+
+            
     }
 
     //method for randomly generating an actor

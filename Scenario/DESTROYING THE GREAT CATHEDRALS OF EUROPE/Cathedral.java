@@ -35,14 +35,21 @@ public class Cathedral extends Actor
     public void act() 
     {
         count++;
+         checkExplode();  // Add your action code here.
         if(count <=2){
       checkOverlap();  
     }
-      checkExplode();  // Add your action code here.
+     
     }  
     //checks if the cathedral has been destroyed
     public void checkExplode(){
-        
+        if(isTouching(Explosion.class)){
+           Explosion e = (Explosion) getOneIntersectingObject(Explosion.class);
+           if(e != null){
+               die();
+               
+            }
+        }
     }
     public void checkOverlap(){
         GreenfootImage cathedral = new GreenfootImage("spire.png");
