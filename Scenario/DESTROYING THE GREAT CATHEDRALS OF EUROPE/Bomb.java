@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bomb extends Actor
 {
     int counter = 0;
+    int fuse = Greenfoot.getRandomNumber(70) + 50;
     /**
      * Act - do whatever the Bomb wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,7 +20,7 @@ public class Bomb extends Actor
    public void act()
     { 
         counter++;
-        if (counter == 200){
+        if (counter == fuse){
             Cathedral c = (Cathedral) getOneIntersectingObject(Cathedral.class);
             if(c != null)
             c.die();
