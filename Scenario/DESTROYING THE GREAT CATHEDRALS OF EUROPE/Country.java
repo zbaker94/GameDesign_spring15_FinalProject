@@ -9,9 +9,10 @@ import java.util.List;
  */
 public class Country extends World
 {
-    private Counter bombsUsed;
-    private Counter timer;
+    //private Counter bombsUsed;
+    //private Counter timer;
 
+    Counter counter = new Counter();
     /**
      * Constructor for objects of class Country.
      * 
@@ -22,22 +23,20 @@ public class Country extends World
         // Create a new world with 700x500 cells with a cell size of 1x1 pixels.
         super(700, 500, 1); 
         setPaintOrder(Counter.class, Arrow.class, Explosion.class,Bullet.class,Enemy.class,Player.class,Bomb.class,Cathedral.class);
-        bombsUsed = new Counter("Bombs: ");
-        timer = new Counter("Ammo: ");
-        addObject(bombsUsed, 75,getHeight()-60);
-        addObject(timer, 70,getHeight()-20);
+        //bombsUsed = new Counter("Bombs: ");
+        //timer = new Counter("Ammo: ");
+        //addObject(bombsUsed, 75,getHeight()-60);
+        //addObject(timer, 70,getHeight()-20);
     }
 
-        public void updateHUD(String barrels, String bombs, String dist, String time) {
-       
-    bombsUsed.set("five");
-        timer.set("six");
-
-            
+    public Counter getCounter() 
+    {
+        return counter; 
     }
 
     //method for randomly generating an actor
     public void generateActor(String actor, int count){
+        addObject(counter, 100, 40);
         for(int i = 0; i < count; i++){
 
             if (actor == "Enemy"){

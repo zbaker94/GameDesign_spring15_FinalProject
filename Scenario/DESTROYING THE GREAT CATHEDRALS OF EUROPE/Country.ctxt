@@ -2,8 +2,8 @@
 comment0.params=
 comment0.target=Country()
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Country.\r\n\ \r\n
-comment1.params=barrels\ bombs\ dist\ time
-comment1.target=void\ updateHUD(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.params=
+comment1.target=Counter\ getCounter()
 comment2.params=actor\ count
 comment2.target=void\ generateActor(java.lang.String,\ int)
 comment3.params=actor\ x\ y\ ammo\ bomb

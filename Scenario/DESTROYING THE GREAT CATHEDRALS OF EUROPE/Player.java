@@ -130,6 +130,9 @@ public class Player extends Mover
             deadBomb a = (deadBomb) getOneIntersectingObject(deadBomb.class);
             Greenfoot.playSound("ammo.wav");
             getWorld().removeObject(a);
+            Country country = (Country)getWorld();
+            Counter counter = country.getCounter();
+            counter.addBomb();
             bombs++;
 
         }

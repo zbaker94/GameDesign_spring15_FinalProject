@@ -8,50 +8,16 @@ import java.awt.Graphics;
  */
 public class Counter extends Actor
 {
-    private static final Color textColor = new Color(0, 0, 0);
-
-    private String text;
-    private String value;
-    private int stringLength;
-
-    public Counter()
-    {
-        this("");
-    }
-
-    public Counter(String prefix)
-    {
-        text = prefix;
-        stringLength = (text.length() + 2) * 10;
-
-        setImage(new GreenfootImage(stringLength, 16));
-        GreenfootImage image = getImage();
-        image.setColor(textColor);
-
-        updateImage();
-    }
-
+    int Bomb = 0;
     public void act() {
-        updateImage();
+        setImage (new GreenfootImage("Bombs : " + Bomb, 24, Color.GREEN, Color.BLACK));
+        
+    }
+    
+    public void addBomb()
+    {
+        Bomb++;
     }
 
-    public void set(String value)
-    {
-        this.value = value;
-    }
 
-    public String getValue()
-    {
-        return value;
-    }
-
-    /**
-     * Update the image.
-     */
-    private void updateImage()
-    {
-        GreenfootImage image = getImage();
-        image.clear();
-        image.drawString(text + value, 1, 12);
-    }
 }
