@@ -102,7 +102,11 @@ public class Player extends Mover
             
                 
                 if(bombs != 0 && reloadDelayCount >= bombReloadTime){
-                bomb();
+                
+                    Country country = (Country)getWorld();
+                    Counter counter = country.getCounter();
+                    counter.removeBomb();
+                    bomb();
             }
         }
     }

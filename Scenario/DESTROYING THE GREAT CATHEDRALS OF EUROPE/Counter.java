@@ -18,6 +18,10 @@ public class Counter extends Actor
     {
         Bomb++;
     }
+    public void removeBomb()
+    {
+        Bomb--;
+    }
 
 
 }
