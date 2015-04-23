@@ -17,7 +17,7 @@ public class Ammo extends Actor
     {
         count ++;
         if(count <=2){
-      checkOverlap();  
+     // checkOverlap();  
     } 
     }  
     public void die(){

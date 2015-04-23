@@ -22,10 +22,12 @@ public class Splash extends World
    public void act() 
     {
       if(Greenfoot.isKeyDown("space")){
+          Greenfoot.playSound("select.wav");
           Greenfoot.setWorld(new France());
           
         }
         if(Greenfoot.isKeyDown("enter")){
+            Greenfoot.playSound("select.wav");
             Greenfoot.setWorld(new Splash2());
         }
     }  

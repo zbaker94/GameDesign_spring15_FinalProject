@@ -40,9 +40,10 @@ public class Player extends Mover
     public void act() 
     {
          reloadDelayCount++;
-        checkKeys();
+      
         checkCollide();
         checkEdge();
+          checkKeys();
        
       
     }   
@@ -164,6 +165,7 @@ public class Player extends Mover
         // stop game
     }
     public void checkEdge(){
+       if(this != null){
         if(getWorld().getObjects(Cathedral.class).size() == 0){
             getWorld().addObject(new Arrow(),80,getWorld().getHeight()/2);
           
@@ -171,18 +173,19 @@ public class Player extends Mover
             if(getX() <= (20)){
                  
             if (currentLevel == 1) {
+                Greenfoot.playSound("transition.wav");
                 currentLevel = 2;
                 getWorld().removeObject(this);
                 Greenfoot.setWorld(new Germany(this));
             }
             else if(currentLevel == 2){
-                
+                 Greenfoot.playSound("transition.wav");
                     currentLevel = 3;
                 getWorld().removeObject(this);
                 Greenfoot.setWorld(new France());
             }
             }else if(currentLevel == 3){
-                
+                Greenfoot.playSound("transition.wav");
                     currentLevel = 4;
                 getWorld().removeObject(this);
                 Greenfoot.setWorld(new France());
@@ -195,6 +198,7 @@ public class Player extends Mover
                 
             
         }
+    }
     }
    
 

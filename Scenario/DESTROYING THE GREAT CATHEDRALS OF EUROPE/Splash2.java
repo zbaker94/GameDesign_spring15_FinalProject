@@ -21,6 +21,7 @@ public class Splash2 extends World
      public void act() 
     {
       if(Greenfoot.isKeyDown("space")){
+        Greenfoot.playSound("select2.wav");
           Greenfoot.setWorld(new France());
           
         }

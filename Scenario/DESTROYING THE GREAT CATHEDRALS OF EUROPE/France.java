@@ -12,7 +12,7 @@ public class France extends Country
     static int spawnX =  578;
     static int spawnY = 305;
 
-GreenfootSound backgroundMusic = new GreenfootSound("your sound file path");
+//GreenfootSound backgroundMusic = new GreenfootSound("your sound file path");
 
     /**
      * Constructor for objects of class France.
@@ -26,7 +26,7 @@ GreenfootSound backgroundMusic = new GreenfootSound("your sound file path");
         generateActor("Ammo", 1);
         generateActor("Hero",spawnX,spawnY, getAmmo(), 0);
         generateActor("Pointer",spawnX - 25, spawnY,0,0);
-        backgroundMusic.playLoop();
+       // backgroundMusic.playLoop();
 
     }
     

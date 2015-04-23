@@ -98,7 +98,7 @@ public class Enemy extends Mover
            Explosion e = (Explosion) getOneIntersectingObject(Explosion.class);
            if(e != null){
                die();
-               
+              return;
             }
         }
          if(isTouching(Bomb.class)){
@@ -109,7 +109,7 @@ public class Enemy extends Mover
               Greenfoot.playSound("defuse.wav");
              getWorld().removeObject(e);
               getWorld().addObject(new deadBomb(),x,y);
-              
+              return;
              
                
             }
