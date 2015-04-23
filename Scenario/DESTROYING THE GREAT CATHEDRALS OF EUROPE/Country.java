@@ -31,7 +31,7 @@ public class Country extends World
         public void updateHUD(String barrels, String bombs, String dist, String time) {
        
     bombsUsed.set(bombs);
-        timer.set(ammo);
+        timer.set("five");
 
             
     }

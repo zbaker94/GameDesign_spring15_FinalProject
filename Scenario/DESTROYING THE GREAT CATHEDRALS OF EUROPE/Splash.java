@@ -17,7 +17,17 @@ public class Splash extends World
     {    
         // Create a new world with 750 by 500 cells with a cell size of 1x1 pixels.
         super(750, 500, 1); 
+        
     }
-  
+   public void act() 
+    {
+      if(Greenfoot.isKeyDown("space")){
+          Greenfoot.setWorld(new France());
+          
+        }
+        if(Greenfoot.isKeyDown("enter")){
+            Greenfoot.setWorld(new Splash2());
+        }
+    }  
     
 }
