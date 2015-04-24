@@ -18,7 +18,7 @@ public class Player extends Mover
     private int currentLevel = 1;
 
     public Player(){
-        World f = (France) getWorld();
+       
         ammo = 3;
         bombs = 2;
         reloadDelayCount = 5;
@@ -100,26 +100,17 @@ public class Player extends Mover
 
             if(Greenfoot.isKeyDown("shift")){
 
-                if(bombs != 0 && reloadDelayCount >= bombReloadTime){
-                    bomb();
-                }
-
-             
-        }
-         if(Greenfoot.isKeyDown("shift")){
-            
-                
-                if(bombs != 0 && reloadDelayCount >= bombReloadTime){
-                
+                if(bombs > 0 && reloadDelayCount >= bombReloadTime){
                     Country country = (Country)getWorld();
                     Counter counter = country.getCounter();
                     counter.removeBomb();
                     bombs--;
                     bomb();
+                }
 
-            }
-            
+             
         }
+         
     }
 }
     //checks if player is colliding, if it is with an enemy, player dies 
