@@ -97,6 +97,7 @@ public class Player extends Mover
                 if(ammo != 0 && reloadDelayCount >= gunReloadTime){
                 shoot();
             }
+             
         }
          if(Greenfoot.isKeyDown("shift")){
             
@@ -108,6 +109,7 @@ public class Player extends Mover
                     counter.removeBomb();
                     bomb();
             }
+            
         }
     }
 }
