@@ -13,8 +13,8 @@ public class EnemyBullet extends Bullet
         super(direction);
         if(direction == "up" || direction == "down") {
             turn(90);
+        }
     }
-}
 
     /**
      * Act - do whatever the EnemyBullet wants to do. This method is called whenever
@@ -37,6 +37,9 @@ public class EnemyBullet extends Bullet
         Cathedral c = (Cathedral)getOneIntersectingObject(Cathedral.class);
         if (p != null){
             Greenfoot.playSound("hit_enemy.wav");
+            World myWorld = getWorld();
+            GameOver gameover = new GameOver();
+            myWorld.addObject(gameover, myWorld.getWidth()/2, myWorld.getHeight()/2);
             p.die();
             getWorld().removeObject(this);  // Removes the Shot
         }
