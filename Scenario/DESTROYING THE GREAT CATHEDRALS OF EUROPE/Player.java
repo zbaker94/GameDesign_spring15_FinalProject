@@ -97,12 +97,27 @@ public class Player extends Mover
                     shoot();
                 }
             }
+<<<<<<< HEAD
             if(Greenfoot.isKeyDown("shift")){
 
                 if(bombs != 0 && reloadDelayCount >= bombReloadTime){
                     bomb();
                 }
+=======
+             
+        }
+         if(Greenfoot.isKeyDown("shift")){
+            
+                
+                if(bombs != 0 && reloadDelayCount >= bombReloadTime){
+                
+                    Country country = (Country)getWorld();
+                    Counter counter = country.getCounter();
+                    counter.removeBomb();
+                    bomb();
+>>>>>>> 4980c2d38c88db46c5aa884e0721f4b4d8fc57a3
             }
+            
         }
     }
     //checks if player is colliding, if it is with an enemy, player dies 
