@@ -97,13 +97,13 @@ public class Player extends Mover
                     shoot();
                 }
             }
-<<<<<<< HEAD
+
             if(Greenfoot.isKeyDown("shift")){
 
                 if(bombs != 0 && reloadDelayCount >= bombReloadTime){
                     bomb();
                 }
-=======
+
              
         }
          if(Greenfoot.isKeyDown("shift")){
@@ -114,18 +114,18 @@ public class Player extends Mover
                     Country country = (Country)getWorld();
                     Counter counter = country.getCounter();
                     counter.removeBomb();
+                    bombs--;
                     bomb();
->>>>>>> 4980c2d38c88db46c5aa884e0721f4b4d8fc57a3
+
             }
             
         }
     }
+}
     //checks if player is colliding, if it is with an enemy, player dies 
     public void checkCollide(){
         if(isTouching(Enemy.class)){
-            World myWorld = getWorld();
-            GameOver gameover = new GameOver();
-            myWorld.addObject(gameover, myWorld.getWidth()/2, myWorld.getHeight()/2);
+            
             die();
 
         }else if(isTouching(Ammo.class)){
@@ -176,7 +176,12 @@ public class Player extends Mover
             p = (Pointer) getWorld().getObjects(Pointer.class).get(0);
             p.die();
         }
+        World myWorld = getWorld();
+            GameOver gameover = new GameOver();
+            myWorld.addObject(gameover, myWorld.getWidth()/2, myWorld.getHeight()/2);
+            Greenfoot.delay(20); 
         getWorld().removeObject(this);
+        Greenfoot.setWorld(new France());
         // d black 6 apr 15
         // Display loss banner
         // stop game
