@@ -104,7 +104,7 @@ public class Player extends Mover
                     Country country = (Country)getWorld();
                     Counter counter = country.getCounter();
                     counter.removeBomb();
-                    bombs--;
+                    
                     bomb();
                 }
 
