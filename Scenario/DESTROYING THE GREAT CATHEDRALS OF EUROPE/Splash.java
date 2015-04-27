@@ -23,7 +23,7 @@ public class Splash extends World
         String titleLine1 = "DESTROYING THE GREAT CATHEDRALS OF EUROPE";
         String titleLine2 = "Z.Taylor, D.Black, R.Southern, B.Wallace";
         String titleLine3 = "CS2301/01 Spring 2015 Final Project";
-        String titleLine4 = "press ENTER for instructions";
+        String titleLine4 = "click Left MOUSE for instructions";
         String titleLine5 = "press SPACE to play";
 
         GreenfootImage background = getBackground();
@@ -47,22 +47,41 @@ public class Splash extends World
         java.awt.Font text3 = new java.awt.Font("Arial", java.awt.Font.BOLD, 12);
         background.setFont(text3);
         background.setColor(java.awt.Color.WHITE);
-        background.drawString((titleLine4), 215, 115); 
+        background.drawString((titleLine4), 210, 115); 
         background.drawString((titleLine5), 235, 140); 
 
     }
-    public void act() 
-    {
 
+    //     public void GreenfootImage (background = getBackground();
+
+    public void act() 
+    {       
+        String currentBackground = "churchRuins1.jpg";
+
+        if (Greenfoot.mouseClicked(this)) {
+            setBackground(new GreenfootImage("players1.jpg"));
+            currentBackground = "Players1.jpg";
+        }
+        if ((Greenfoot.mouseClicked(this)) && currentBackground == "players1.jpg")
+        {
+            setBackground(new GreenfootImage("rules1.jpg"));
+            currentBackground = "rules1.jpg";
+        }
+        if ((Greenfoot.mouseClicked(this)) && currentBackground == "rules1.jpg")
+        {
+            setBackground(new GreenfootImage("commands1.jpg"));
+            currentBackground = "commands1.jpg";
+        }
         if(Greenfoot.isKeyDown("space")){
             Greenfoot.playSound("select.wav");
             Greenfoot.setWorld(new France());
 
         }
-        if(Greenfoot.isKeyDown("enter")){
-            Greenfoot.playSound("select.wav");
-            Greenfoot.setWorld(new Splash2());
-        }
+
+        //         if(Greenfoot.isKeyDown("enter")){
+        //             Greenfoot.playSound("select.wav");
+        //             Greenfoot.setWorld(new Splash2());
+        //         }
 
     }  
 
