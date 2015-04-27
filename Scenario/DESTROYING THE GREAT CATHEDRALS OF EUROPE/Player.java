@@ -18,7 +18,7 @@ public class Player extends Mover
     private int currentLevel = 1;
 
     public Player(){
-       
+
         ammo = 3;
         bombs = 2;
         reloadDelayCount = 5;
@@ -104,19 +104,17 @@ public class Player extends Mover
                     Country country = (Country)getWorld();
                     Counter counter = country.getCounter();
                     counter.removeBomb();
-                    
+
                     bomb();
                 }
 
-             
+            }
         }
-         
     }
-}
     //checks if player is colliding, if it is with an enemy, player dies 
     public void checkCollide(){
         if(isTouching(Enemy.class)){
-            
+
             die();
 
         }else if(isTouching(Ammo.class)){
@@ -168,9 +166,9 @@ public class Player extends Mover
             p.die();
         }
         World myWorld = getWorld();
-            GameOver gameover = new GameOver();
-            myWorld.addObject(gameover, myWorld.getWidth()/2, myWorld.getHeight()/2);
-            Greenfoot.delay(20); 
+        GameOver gameover = new GameOver();
+        myWorld.addObject(gameover, myWorld.getWidth()/2, myWorld.getHeight()/2);
+        Greenfoot.delay(20); 
         getWorld().removeObject(this);
         Greenfoot.setWorld(new France());
         // d black 6 apr 15

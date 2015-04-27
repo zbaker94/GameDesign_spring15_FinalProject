@@ -17,27 +17,24 @@ public class Bomb extends Actor
     public Bomb(){
         setImage("bomb1.png");
     }
-   public void act()
+
+    public void act()
     { 
         counter++;
         if (counter == fuse){
             Cathedral c = (Cathedral) getOneIntersectingObject(Cathedral.class);
             if(c != null)
-            c.die();
-             int x = getX();
-        int y = getY();
-        
-        getWorld().addObject(new Explosion(),x,y);
+                c.die();
+            int x = getX();
+            int y = getY();
+
+            getWorld().addObject(new Explosion(),x,y);
             getWorld().removeObject(this);
         }
-        
-    }
-    
-    
-   
-    
-        
-        
+
     }
 
+   
+        
+}
 
