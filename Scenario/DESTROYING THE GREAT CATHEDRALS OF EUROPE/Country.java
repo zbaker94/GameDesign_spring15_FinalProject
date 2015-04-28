@@ -68,7 +68,7 @@ public class Country extends World
                     img = "tower";
                 }
 
-                GreenfootImage cathedral = new GreenfootImage("St_Peters_Italy.png");
+                GreenfootImage cathedral = new GreenfootImage("dome.png");
                 int x = Greenfoot.getRandomNumber((450) +1); 
                 int y = Greenfoot.getRandomNumber(500 +1); 
                 while(x - cathedral.getWidth() < 0){
