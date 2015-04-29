@@ -20,10 +20,11 @@ public class France extends Country
      */
     public France()
     { 
-        generateActor("Enemy",1);
-        generateActor("Bomb",3);
-        generateActor("Cathedral",3);
-        generateActor("Ammo", 1);
+//         France - 5 cathedrals, five bombs, four ammo
+        generateActor("Enemy",3);
+        generateActor("Bomb",5);
+        generateActor("Cathedral",5);
+        generateActor("Ammo", 4);
         generateActor("Hero",spawnX,spawnY, getAmmo(), 0);
         generateActor("Pointer",spawnX - 25, spawnY,0,0);
        // backgroundMusic.playLoop();

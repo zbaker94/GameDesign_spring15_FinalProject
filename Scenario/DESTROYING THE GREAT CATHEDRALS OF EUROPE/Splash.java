@@ -8,7 +8,7 @@ import java.awt.Color;
  */
 public class Splash extends World
 {
-    String currentBackground = "churchRuins1.jpg";
+    String currentBackground = "splash.png";
     public int count = 0;
     /**
      * Constructor for objects of class Splash.
@@ -24,7 +24,7 @@ public class Splash extends World
         String titleLine1 = "DESTROYING THE GREAT CATHEDRALS OF EUROPE";
         String titleLine2 = "Z.Taylor, D.Black, R.Southern, B.Wallace";
         String titleLine3 = "CS2301/01 Spring 2015 Final Project";
-        String titleLine4 = "press RIGHT ARROW for next screen";
+        String titleLine4 = "press ENTER for next screen";
         String titleLine5 = "press SPACE to play";
 
         GreenfootImage background = getBackground();

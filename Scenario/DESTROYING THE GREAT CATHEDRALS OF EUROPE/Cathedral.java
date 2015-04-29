@@ -11,23 +11,23 @@ public class Cathedral extends Actor
     int count =0;
     public Cathedral(){
         int rando = Greenfoot.getRandomNumber(3) + 1;
-            String img = "tower";
-            if(rando <= 3 && rando > 2){
-                img = "spire";
-            }else if(rando <=2 && rando > 1){
-                img = "dome";
-            }else{
-                img = "tower";
-            }
+        String img = "tower";
+        if(rando <= 3 && rando > 2){
+            img = "spire";
+        }else if(rando <=2 && rando > 1){
+            img = "dome";
+        }else{
+            img = "tower";
+        }
         setImage(img+".png");
-        
+
     }
-    
+
     public Cathedral(String img){
         setImage(img + ".png");
-      
+
     }
-    
+
     /**
      * Act - do whatever the Cathedral wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -35,22 +35,23 @@ public class Cathedral extends Actor
     public void act() 
     {
         count++;
-         checkExplode();  // Add your action code here.
+        checkExplode();  // Add your action code here.
         if(count <=2){
-      checkOverlap();  
-    }
-     
+            checkOverlap();  
+        }
+
     }  
     //checks if the cathedral has been destroyed
     public void checkExplode(){
         if(isTouching(Explosion.class)){
-           Explosion e = (Explosion) getOneIntersectingObject(Explosion.class);
-           if(e != null){
-               die();
-               
+            Explosion e = (Explosion) getOneIntersectingObject(Explosion.class);
+            if(e != null){
+                die();
+
             }
         }
     }
+
     public void checkOverlap(){
         GreenfootImage cathedral = new GreenfootImage("spire.png");
         if(getOneIntersectingObject(null) != null ){
@@ -68,7 +69,7 @@ public class Cathedral extends Actor
     }
     //on death, spawns another enemy, then dissapeers
     public void die(){
-       
+
         getWorld().removeObject(this);
     }
 }
