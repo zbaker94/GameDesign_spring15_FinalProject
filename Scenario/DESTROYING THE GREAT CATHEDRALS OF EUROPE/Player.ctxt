@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Player()
+comment0.params=AmmoCounter
+comment0.target=Player(Counter)
 comment1.params=ammo\ bomb
 comment1.target=Player(int,\ int)
 comment2.params=

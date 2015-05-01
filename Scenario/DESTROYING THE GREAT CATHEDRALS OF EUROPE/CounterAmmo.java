@@ -6,23 +6,21 @@ import java.awt.Graphics;
 /**
  * Display showing information regarding the state of the game.
  */
-public class Counter extends Actor
+public class CounterAmmo extends Actor
 {
-    int Bomb = 0;
+    int Ammo = 0;
     public void act() {
-        setImage (new GreenfootImage("Bombs : " + Bomb, 24, Color.ORANGE, Color.BLACK ));
+        setImage (new GreenfootImage("Ammo : " + Ammo, 24, Color.WHITE, Color.BLACK ));
         
     }
     
-    public void addBomb()
+        public void addAmmo()
     {
-        Bomb++;
+        Ammo+=3;
     }
-
-    public void removeBomb()
+    public void removeAmmo()
     {
-        Bomb--;
+        Ammo--;
     }
-
 
 }

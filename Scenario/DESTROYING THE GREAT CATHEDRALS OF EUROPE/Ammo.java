@@ -15,15 +15,20 @@ public class Ammo extends Actor
     int count = 0;
     public void act() 
     {
-        count ++;
+        count++;
         if(count <=2){
-     // checkOverlap();  
-    } 
+            // checkOverlap();  
+        } 
     }  
+
     public void die(){
         Greenfoot.playSound("ammo.wav");
+        //getWorld().removeObject(Ammo);
+        Country country = (Country)getWorld();
+        Counter counterammo = country.getCounter();
         getWorld().removeObject(this);
     }
+
     public void checkOverlap(){
         GreenfootImage dBomb = new GreenfootImage("ammo.png");
         if(getOneIntersectingObject(null) != null ){
@@ -36,6 +41,8 @@ public class Ammo extends Actor
                 y =Greenfoot.getRandomNumber(getWorld().getHeight());
             }
             getWorld().addObject(new Ammo(),x,y);
+            Country country = (Country)getWorld();
+            Counter counterammo = country.getCounter();
             getWorld().removeObject(this);
         }
     }

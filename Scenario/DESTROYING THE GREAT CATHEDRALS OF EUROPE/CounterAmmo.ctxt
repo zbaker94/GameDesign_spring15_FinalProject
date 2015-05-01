@@ -2,7 +2,7 @@
 comment0.params=
 comment0.target=void\ act()
 comment1.params=
-comment1.target=void\ addBomb()
+comment1.target=void\ addAmmo()
 comment2.params=
-comment2.target=void\ removeBomb()
+comment2.target=void\ removeAmmo()
 numComments=3

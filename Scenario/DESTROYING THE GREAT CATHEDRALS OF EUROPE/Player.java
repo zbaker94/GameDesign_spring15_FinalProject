@@ -17,7 +17,7 @@ public class Player extends Mover
     private boolean canMove = true;
     private int currentLevel = 1;
 
-    public Player(){
+    public Player(Counter AmmoCounter){
 
         ammo = 3;
         bombs = 2;
@@ -119,8 +119,11 @@ public class Player extends Mover
 
         }else if(isTouching(Ammo.class)){
             Ammo a = (Ammo) getOneIntersectingObject(Ammo.class);
+            Greenfoot.playSound("ammo.wav");
             a.die();
-            ammo += 3;
+            Country country = (Country)getWorld();
+            Counter counterammo = country.getCounter();
+            ammo+=3;
 
         }
         else if(isTouching(Explosion.class)){

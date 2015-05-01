@@ -13,6 +13,8 @@ public class Country extends World
     //private Counter timer;
 
     Counter counter = new Counter();
+    Counter counterammo = new Counter();
+
     /**
      * Constructor for objects of class Country.
      * 
@@ -36,7 +38,8 @@ public class Country extends World
 
     //method for randomly generating an actor
     public void generateActor(String actor, int count){
-        addObject(counter, 100, 40);
+        addObject(counter, 630, 40);
+        addObject(counterammo, 100, 40);
         for(int i = 0; i < count; i++){
 
             if (actor == "Enemy"){
@@ -68,7 +71,7 @@ public class Country extends World
                     img = "tower";
                 }
 
-                GreenfootImage cathedral = new GreenfootImage("St_Peters_Italy.png");
+                GreenfootImage cathedral = new GreenfootImage("dome.png");
                 int x = Greenfoot.getRandomNumber((450) +1); 
                 int y = Greenfoot.getRandomNumber(500 +1); 
                 while(x - cathedral.getWidth() < 0){

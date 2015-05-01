@@ -8,7 +8,8 @@ import java.awt.Color;
  */
 public class Splash extends World
 {
-
+    String currentBackground = "splash.png";
+    public int count = 0;
     /**
      * Constructor for objects of class Splash.
      * 
@@ -16,14 +17,14 @@ public class Splash extends World
     public Splash()
     {    
         // Create a new world with 750 by 500 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(600, 450, 1); 
 
         Color myCol1 = new Color (255,255,255,0);
 
         String titleLine1 = "DESTROYING THE GREAT CATHEDRALS OF EUROPE";
         String titleLine2 = "Z.Taylor, D.Black, R.Southern, B.Wallace";
         String titleLine3 = "CS2301/01 Spring 2015 Final Project";
-        String titleLine4 = "click Left MOUSE for instructions";
+        String titleLine4 = "press ENTER for next screen";
         String titleLine5 = "press SPACE to play";
 
         GreenfootImage background = getBackground();
@@ -42,47 +43,59 @@ public class Splash extends World
         background.drawString((titleLine3), 90, 60); 
 
         Color myCol2 = new Color (0,0,255,40);
-        background.setColor(java.awt.Color.BLACK);
-        background.fillRect(200, 100, 200, 50);
-        java.awt.Font text3 = new java.awt.Font("Arial", java.awt.Font.BOLD, 12);
+        background.setColor(myCol1);
+        background.fillRect(190, 100, 220, 50);
+        java.awt.Font text3 = new java.awt.Font("Arial", java.awt.Font.BOLD, 14);
         background.setFont(text3);
         background.setColor(java.awt.Color.WHITE);
-        background.drawString((titleLine4), 210, 115); 
+        background.drawString((titleLine4), 200, 115); 
         background.drawString((titleLine5), 235, 140); 
 
     }
 
-    //     public void GreenfootImage (background = getBackground();
-
     public void act() 
     {       
-        String currentBackground = "churchRuins1.jpg";
 
-        if (Greenfoot.mouseClicked(this)) {
-            setBackground(new GreenfootImage("players1.jpg"));
-            currentBackground = "Players1.jpg";
-        }
-        if ((Greenfoot.mouseClicked(this)) && currentBackground == "players1.jpg")
-        {
-            setBackground(new GreenfootImage("rules1.jpg"));
-            currentBackground = "rules1.jpg";
-        }
-        if ((Greenfoot.mouseClicked(this)) && currentBackground == "rules1.jpg")
+        if ((Greenfoot.isKeyDown("right")) && currentBackground == "rules1.jpg" && count > 30)
         {
             setBackground(new GreenfootImage("commands1.jpg"));
             currentBackground = "commands1.jpg";
+            count = 0;
         }
+
+        else if ((Greenfoot.isKeyDown("right")) && currentBackground == "players1.jpg" && count > 30)
+        {
+            setBackground(new GreenfootImage("rules1.jpg"));
+            currentBackground = "rules1.jpg";
+            count = 0;
+        }
+
+        else if ((Greenfoot.isKeyDown("right")) && currentBackground == "churchRuins1.jpg" && count > 30) 
+        {
+            setBackground(new GreenfootImage("players1.jpg"));
+            currentBackground = "players1.jpg";
+            count = 0;
+        }
+        
+//         else if ((Greenfoot.isKeyDown("left")) && currentBackground == "commands1.jpg" && count > 30)
+//         {
+//             setBackground(new GreenfootImage("rules1.jpg"));
+//             currentBackground = "rules1.jpg";
+//             count = 0;
+//         }
+//         else if ((Greenfoot.isKeyDown("left")) && currentBackground == "rules.jpg" && count > 30)
+//         {
+//             setBackground(new GreenfootImage("players1.jpg"));
+//             currentBackground = "players1.jpg";
+//             count = 0;
+//         }
+
         if(Greenfoot.isKeyDown("space")){
             Greenfoot.playSound("select.wav");
             Greenfoot.setWorld(new France());
-
         }
-
-        //         if(Greenfoot.isKeyDown("enter")){
-        //             Greenfoot.playSound("select.wav");
-        //             Greenfoot.setWorld(new Splash2());
-        //         }
-
+        count = count + 1;
+       
     }  
 
 }

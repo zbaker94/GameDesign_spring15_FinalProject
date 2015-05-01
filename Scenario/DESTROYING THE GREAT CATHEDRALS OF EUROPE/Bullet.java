@@ -11,7 +11,6 @@ public class Bullet extends Mover
 
     public void act()
     {
-        
         moveDir(speed);
         if(atWorldEdge()){
             World f = getWorld();
@@ -20,20 +19,20 @@ public class Bullet extends Mover
         }
         checkCollision();
     }
-     public void checkCollision()
+
+    public void checkCollision()
     {
         Enemy e =(Enemy)getOneIntersectingObject(Enemy.class);
-         Cathedral c = (Cathedral)getOneIntersectingObject(Cathedral.class);
+        Cathedral c = (Cathedral)getOneIntersectingObject(Cathedral.class);
         if (e != null){
-       Greenfoot.playSound("hit_enemy.wav");
-       e.damage(5);
-        getWorld().removeObject(this);  // Removes the Shot
-    }
-    if(c != null){
-       // getWorld().removeObject(this); // Removes the Shot
-    }
-        
+            Greenfoot.playSound("hit_enemy.wav");
+            e.damage(5);
+            getWorld().removeObject(this);  // Removes the Shot
+        }
+        if(c != null){
+            // getWorld().removeObject(this); // Removes the Shot
+        }
+
     }
 
-   
 }
