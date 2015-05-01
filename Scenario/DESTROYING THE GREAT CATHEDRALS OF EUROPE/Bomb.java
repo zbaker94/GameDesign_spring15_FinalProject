@@ -17,13 +17,18 @@ public class Bomb extends Actor
     public Bomb(){
         setImage("bomb1.png");
     }
+<<<<<<< .merge_file_a03612
 
     public void act()
+=======
+   public void act()
+>>>>>>> .merge_file_a07412
     { 
         counter++;
         if (counter == fuse){
             Cathedral c = (Cathedral) getOneIntersectingObject(Cathedral.class);
             if(c != null)
+<<<<<<< .merge_file_a03612
                 c.die();
             int x = getX();
             int y = getY();
@@ -37,4 +42,23 @@ public class Bomb extends Actor
    
         
 }
+=======
+            c.die();
+             int x = getX();
+        int y = getY();
+        
+        getWorld().addObject(new Explosion(),x,y);
+            getWorld().removeObject(this);
+        }
+        
+    }
+    
+    
+   
+    
+        
+        
+    }
+
+>>>>>>> .merge_file_a07412
 
