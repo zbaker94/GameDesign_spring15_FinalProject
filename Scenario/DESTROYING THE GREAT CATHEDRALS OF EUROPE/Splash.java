@@ -8,7 +8,7 @@ import java.awt.Color;
  */
 public class Splash extends World
 {
-    String currentBackground = "splash.png";
+    String currentBackground = "church ruin 1.jpg";
     public int count = 0;
     /**
      * Constructor for objects of class Splash.
@@ -16,7 +16,7 @@ public class Splash extends World
      */
     public Splash()
     {    
-        // Create a new world with 750 by 500 cells with a cell size of 1x1 pixels.
+        // Create a new world with 600 by 450 cells with a cell size of 1x1 pixels.
         super(600, 450, 1); 
 
         Color myCol1 = new Color (255,255,255,0);
@@ -24,7 +24,7 @@ public class Splash extends World
         String titleLine1 = "DESTROYING THE GREAT CATHEDRALS OF EUROPE";
         String titleLine2 = "Z.Taylor, D.Black, R.Southern, B.Wallace";
         String titleLine3 = "CS2301/01 Spring 2015 Final Project";
-        String titleLine4 = "press ENTER for next screen";
+        String titleLine4 = "press RIGHT ARROW for next screen";
         String titleLine5 = "press SPACE to play";
 
         GreenfootImage background = getBackground();
@@ -36,6 +36,7 @@ public class Splash extends World
         background.setFont(text1);
         background.setColor(java.awt.Color.RED);
         background.drawString((titleLine1), 90, 20); 
+        
         java.awt.Font text2 = new java.awt.Font("Times New Roman", java.awt.Font.BOLD, 12);
         background.setFont(text2);
         background.setColor(java.awt.Color.BLACK);
@@ -45,6 +46,7 @@ public class Splash extends World
         Color myCol2 = new Color (0,0,255,40);
         background.setColor(myCol1);
         background.fillRect(190, 100, 220, 50);
+        
         java.awt.Font text3 = new java.awt.Font("Arial", java.awt.Font.BOLD, 14);
         background.setFont(text3);
         background.setColor(java.awt.Color.WHITE);
@@ -56,21 +58,21 @@ public class Splash extends World
     public void act() 
     {       
 
-        if ((Greenfoot.isKeyDown("right")) && currentBackground == "rules1.jpg" && count > 30)
+        if ((Greenfoot.isKeyDown("right")) && currentBackground == "rules1.jpg" && count > 5 )
         {
             setBackground(new GreenfootImage("commands1.jpg"));
             currentBackground = "commands1.jpg";
             count = 0;
         }
 
-        else if ((Greenfoot.isKeyDown("right")) && currentBackground == "players1.jpg" && count > 30)
+        else if ((Greenfoot.isKeyDown("right")) && currentBackground == "players1.jpg" && count > 5  )
         {
             setBackground(new GreenfootImage("rules1.jpg"));
             currentBackground = "rules1.jpg";
             count = 0;
         }
 
-        else if ((Greenfoot.isKeyDown("right")) && currentBackground == "churchRuins1.jpg" && count > 30) 
+        else if ((Greenfoot.isKeyDown("right")) && currentBackground == "church ruin 1.jpg" && count > 5  ) 
         {
             setBackground(new GreenfootImage("players1.jpg"));
             currentBackground = "players1.jpg";
@@ -90,7 +92,7 @@ public class Splash extends World
 //             count = 0;
 //         }
 
-        if(Greenfoot.isKeyDown("space")){
+        else if(Greenfoot.isKeyDown("space")){
             Greenfoot.playSound("select.wav");
             Greenfoot.setWorld(new France());
         }
