@@ -2,4 +2,13 @@
 comment0.params=
 comment0.target=Belgium()
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Belgium.\r\n\ \r\n
-numComments=1
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ d.\ Black\ -\ add\ country\ specific\ background\ music\ during\ play\r\n
+comment2.params=
+comment2.target=int\ getAmmo()
+comment3.params=name\ x\ y
+comment3.target=void\ GenerateActor(java.lang.String,\ int,\ int)
+comment4.params=
+comment4.target=void\ play()
+numComments=5

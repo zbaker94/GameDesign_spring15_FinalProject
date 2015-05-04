@@ -23,5 +23,27 @@ public class Belgium extends Country
 //         generateActor("Pointer",spawnX - 25, spawnY,0,0);
         // backgroundMusic.playLoop();
     }
+    /**
+     * d. Black - add country specific background music during play
+     */
+    
+    public void act()
+    {
+        play();
+    }
+    
+     public int getAmmo(){
+        return 8;
+    }
+
+    public void GenerateActor(String name, int x, int y){
+        generateActor(name,x,y,0,0);
+    }
+    
+    public void play()
+    {
+        Greenfoot.playSound("Belgian Medieval Song.wav");
+    }
+    
 }
 // Belgium - 3 cathedrals, four bombs, two ammo
