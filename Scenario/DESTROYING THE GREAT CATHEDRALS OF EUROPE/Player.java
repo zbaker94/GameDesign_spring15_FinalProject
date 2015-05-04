@@ -173,7 +173,7 @@ public class Player extends Mover
         myWorld.addObject(gameover, myWorld.getWidth()/2, myWorld.getHeight()/2);
         Greenfoot.delay(20); 
         getWorld().removeObject(this);
-        Greenfoot.setWorld(new France());
+        Greenfoot.setWorld(new Germany());
         // d black 6 apr 15
         // Display loss banner
         // stop game
@@ -189,19 +189,19 @@ public class Player extends Mover
                         Greenfoot.playSound("transition.wav");
                         currentLevel = 2;
                         getWorld().removeObject(this);
-                        Greenfoot.setWorld(new Germany(this));
+                        Greenfoot.setWorld(new Belgium(this));
                     }
                     else if(currentLevel == 2){
                         Greenfoot.playSound("transition.wav");
                         currentLevel = 3;
                         getWorld().removeObject(this);
-                        Greenfoot.setWorld(new France());
+                        Greenfoot.setWorld(new France(this));
                     }
                 }else if(currentLevel == 3){
                     Greenfoot.playSound("transition.wav");
                     currentLevel = 4;
                     getWorld().removeObject(this);
-                    Greenfoot.setWorld(new France());
+                    Greenfoot.setWorld(new England(this));
                 }
                 else if(currentLevel == 4){
 
