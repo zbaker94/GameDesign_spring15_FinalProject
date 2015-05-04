@@ -1,6 +1,11 @@
 #Greenfoot properties
+<<<<<<< HEAD
 #Mon May 04 13:44:55 EDT 2015
 target16.name=deadBomb
+=======
+#Mon May 04 11:51:50 EDT 2015
+target16.name=Enemy
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 dependency35.to=GameOver
 target2.name=Bullet
 target9.name=Counter
@@ -65,10 +70,17 @@ dependency15.to=deadBomb
 target5.height=50
 target15.name=Bomb
 class.Germany.image=Germany.png
+<<<<<<< HEAD
 target1.name=GameOver
 version=2.6.0
 target11.naviview.expanded=true
 target8.name=England
+=======
+target1.name=Arrow
+target11.naviview.expanded=false
+version=2.7.0
+target8.name=Cathedral
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 dependency36.to=Explosion
 target22.name=Mover
 target21.editor.height=700
@@ -291,6 +303,7 @@ dependency22.to=Enemy
 dependency14.type=UsesDependency
 dependency11.from=Player
 target14.naviview.expanded=true
+<<<<<<< HEAD
 target18.y=370
 dependency18.from=Player
 class.Pointer.image=anchor.png
@@ -298,6 +311,15 @@ target18.x=10
 dependency43.to=GameOver
 target14.y=250
 target14.x=190
+=======
+target18.y=190
+dependency18.from=Player
+class.Pointer.image=anchor.png
+target18.x=190
+dependency43.to=GameOver
+target14.y=430
+target14.x=10
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 target10.type=ClassTarget
 dependency18.to=GameOver
 dependency21.type=UsesDependency
@@ -305,6 +327,7 @@ package.numDependencies=48
 target17.type=ClassTarget
 dependency28.type=UsesDependency
 dependency25.from=Country
+<<<<<<< HEAD
 target10.y=190
 target3.type=ClassTarget
 target10.x=100
@@ -320,6 +343,23 @@ target11.editor.x=0
 dependency39.from=Country
 target10.typeParameters=
 target18.editor.width=900
+=======
+target10.y=130
+target3.type=ClassTarget
+target10.x=10
+dependency39.to=Arrow
+target22.editor.width=900
+target3.naviview.expanded=false
+class.Enemy.image=Police1.png
+target11.editor.y=20
+target16.width=80
+dependency35.type=UsesDependency
+dependency32.from=Bomb
+target11.editor.x=40
+dependency39.from=Country
+target10.typeParameters=
+target18.editor.width=684
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 target8.typeParameters=
 dependency12.to=Counter
 target4.editor.width=684
@@ -332,6 +372,7 @@ dependency41.from=EnemyBullet
 dependency33.to=Explosion
 dependency8.from=Enemy
 target4.naviview.expanded=false
+<<<<<<< HEAD
 target12.editor.width=948
 dependency48.from=Splash
 target22.height=50
@@ -340,6 +381,16 @@ target18.naviview.expanded=false
 target9.y=130
 target4.editor.y=0
 target9.x=190
+=======
+target12.editor.width=684
+dependency48.from=Splash
+target22.height=50
+target14.height=50
+target18.naviview.expanded=true
+target9.y=310
+target4.editor.y=0
+target9.x=200
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 target4.editor.x=684
 dependency51.type=UsesDependency
 dependency29.to=Player
@@ -347,20 +398,34 @@ target11.name=Country
 target5.y=130
 target5.x=10
 target22.typeParameters=
+<<<<<<< HEAD
 target18.name=EnemyBullet
 target3.height=50
 dependency6.to=EnemyBullet
 target4.name=Player
 target1.y=10
+=======
+target18.name=Country
+target3.height=50
+dependency6.to=EnemyBullet
+target4.name=Player
+target1.y=130
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 target19.typeParameters=
 target1.x=100
 target5.typeParameters=
 dependency13.type=UsesDependency
 dependency10.from=Player
 target7.showInterface=false
+<<<<<<< HEAD
 target3.width=80
 target17.editor.y=0
 target17.editor.x=0
+=======
+target3.width=90
+target17.editor.y=20
+target17.editor.x=40
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 dependency17.from=Player
 class.Splash.superclass=greenfoot.World
 target20.editor.y=0
@@ -378,11 +443,19 @@ dependency19.to=France
 target13.editor.y=0
 target13.editor.x=0
 target4.height=50
+<<<<<<< HEAD
 target20.y=490
 target20.x=10
 dependency34.type=UsesDependency
 dependency31.from=Cathedral
 target8.naviview.expanded=true
+=======
+target20.y=310
+target20.x=10
+dependency34.type=UsesDependency
+dependency31.from=Cathedral
+target8.naviview.expanded=false
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 target6.showInterface=false
 target15.showInterface=false
 dependency38.from=Country
@@ -392,17 +465,28 @@ target2.typeParameters=
 dependency13.to=Ammo
 dependency3.type=UsesDependency
 target8.editor.height=700
+<<<<<<< HEAD
 target15.editor.width=900
+=======
+target15.editor.width=684
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 dependency43.type=UsesDependency
 dependency40.from=Splash
 dependency7.from=Enemy
 target6.width=80
 dependency47.from=Ammo
 class.Player.image=Cowboy2_walk without gun_0.png
+<<<<<<< HEAD
 target20.width=110
 target6.editor.y=0
 mainWindow.height=768
 target9.naviview.expanded=false
+=======
+target20.width=80
+target6.editor.y=0
+mainWindow.height=768
+target9.naviview.expanded=true
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 target6.editor.x=0
 class.Bullet.image=blue-draught.png
 target5.showInterface=false
@@ -416,6 +500,7 @@ class.EnemyBullet.image=red-draught.png
 target10.name=Ammo
 target17.y=430
 target17.x=10
+<<<<<<< HEAD
 target17.name=Belgium
 target3.name=Enemy
 target7.height=50
@@ -427,6 +512,19 @@ target7.editor.height=700
 target16.editor.height=720
 target19.editor.y=2
 target19.editor.x=0
+=======
+target17.name=Splash
+target3.name=EnemyBullet
+target7.height=50
+target13.y=130
+target13.x=190
+target2.editor.y=0
+target2.editor.x=0
+target7.editor.height=728
+target16.editor.height=700
+target19.editor.y=0
+target19.editor.x=684
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 dependency7.to=Ammo
 dependency12.type=UsesDependency
 target22.editor.y=20
@@ -444,19 +542,31 @@ target11.height=50
 target15.editor.y=0
 dependency24.to=Counter
 target1.type=ClassTarget
+<<<<<<< HEAD
 target15.editor.x=0
+=======
+target15.editor.x=684
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 target9.width=80
 class.Splash2.superclass=greenfoot.World
 target8.type=ClassTarget
 target6.editor.height=700
 class.Arrow.image=arrow.png
+<<<<<<< HEAD
 target15.editor.height=700
+=======
+target15.editor.height=728
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 target22.type=ClassTarget
 dependency1.to=Enemy
 target21.editor.width=900
 dependency33.type=UsesDependency
 dependency30.from=Country
+<<<<<<< HEAD
 target9.editor.width=684
+=======
+target9.editor.width=900
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 target5.width=80
 dependency45.to=CounterAmmo
 dependency37.from=Country
@@ -472,6 +582,7 @@ target4.y=70
 target4.x=70
 dependency42.type=UsesDependency
 target20.height=50
+<<<<<<< HEAD
 target8.editor.y=2
 dependency9.type=UsesDependency
 dependency6.from=Enemy
@@ -479,6 +590,15 @@ target12.height=50
 target8.editor.x=378
 dependency49.type=UsesDependency
 target14.editor.height=720
+=======
+target8.editor.y=0
+dependency9.type=UsesDependency
+dependency6.from=Enemy
+target12.height=50
+target8.editor.x=0
+dependency49.type=UsesDependency
+target14.editor.height=700
+>>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
 dependency46.from=Ammo
 target21.typeParameters=
 target11.editor.width=684

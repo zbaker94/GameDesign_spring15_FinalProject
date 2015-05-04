@@ -8,20 +8,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Belgium extends Country
 {
+     static int spawnX =  578;
+ static int spawnY = 305;
 
     /**
      * Constructor for objects of class Belgium.
      * 
      */
-    public Belgium()
+    public Belgium(Player p)
     {
-        generateActor("Enemy",2);
-        generateActor("Bomb",4);
-        generateActor("Cathedral",3);
+           generateActor("Enemy",1);
+        generateActor("Bomb",2);
+        generateActor("Cathedral",2);
         generateActor("Ammo", 2);
-//         generateActor("Hero",spawnX,spawnY, getAmmo(), 0);
-//         generateActor("Pointer",spawnX - 25, spawnY,0,0);
-        // backgroundMusic.playLoop();
+       addObject(p,spawnX,spawnY);
+        generateActor("Pointer",spawnX - 25, spawnY,0,0);
     }
     /**
      * d. Black - add country specific background music during play

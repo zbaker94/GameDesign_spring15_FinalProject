@@ -94,7 +94,7 @@ public class Splash extends World
 
         else if(Greenfoot.isKeyDown("space")){
             Greenfoot.playSound("select.wav");
-            Greenfoot.setWorld(new France());
+            Greenfoot.setWorld(new Germany());
         }
         count = count + 1;
        

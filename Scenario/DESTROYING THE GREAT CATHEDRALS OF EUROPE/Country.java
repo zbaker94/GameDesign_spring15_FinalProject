@@ -24,7 +24,9 @@ public class Country extends World
 
         // Create a new world with 700x500 cells with a cell size of 1x1 pixels.
         super(700, 500, 1); 
-        setPaintOrder( GameOver.class, Counter.class, Explosion.class,Bullet.class,Enemy.class,Player.class,Bomb.class,Cathedral.class,  Arrow.class);
+        setPaintOrder( GameOver.class,CounterAmmo.class, Counter.class, Explosion.class,Bullet.class,Enemy.class,Player.class,Bomb.class,Cathedral.class,  Arrow.class);
+         addObject(new Counter(), 630, 40);
+        addObject(new CounterAmmo(), 100, 40);
         //bombsUsed = new Counter("Bombs: ");
         //timer = new Counter("Ammo: ");
         //addObject(bombsUsed, 75,getHeight()-60);
@@ -38,8 +40,7 @@ public class Country extends World
 
     //method for randomly generating an actor
     public void generateActor(String actor, int count){
-        addObject(counter, 630, 40);
-        addObject(counterammo, 100, 40);
+       
         for(int i = 0; i < count; i++){
 
             if (actor == "Enemy"){
