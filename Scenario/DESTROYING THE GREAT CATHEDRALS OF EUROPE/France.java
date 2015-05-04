@@ -11,6 +11,8 @@ public class France extends Country
 {
     static int spawnX =  578;
     static int spawnY = 305;
+    public GreenfootSound music1 = new GreenfootSound("french medieval song.wav");  
+  
 
     /**
      * Constructor for objects of class France.
@@ -31,23 +33,22 @@ public class France extends Country
         generateActor("Hero",spawnX,spawnY, getAmmo(), 0);
         generateActor("Pointer",spawnX - 25, spawnY,0,0);
 
-//     public France(Player p)
-    { 
-//         France - 5 cathedrals, five bombs, four ammo
+        //     public France(Player p)
+
+        //         France - 5 cathedrals, five bombs, four ammo
         generateActor("Enemy",2);
-            generateActor("Cathedral",2);
-            generateActor("Bomb",2);
-            generateActor("Ammo", 0);
-            addObject(p,spawnX,spawnY);
-            generateActor("Pointer",spawnX - 25, spawnY,0,0);
-       // backgroundMusic.playLoop();
->>>>>>> 430c035123f5e32a115b483b5da633f8e9c07699
+        generateActor("Cathedral",2);
+        generateActor("Bomb",2);
+        generateActor("Ammo", 0);
+        //             addObject(p,spawnX,spawnY);
+        generateActor("Pointer",spawnX - 25, spawnY,0,0);
+      
 
     }
-
     public void act()
     { 
         play();
+       
     }            
 
     public int getAmmo(){
@@ -64,7 +65,10 @@ public class France extends Country
 
     public void play()
     {
-        Greenfoot.playSound("french medieval song.wav");
+          music1.playLoop();
     }
 
-}
+    
+    }
+
+

@@ -8,8 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Belgium extends Country
 {
-     static int spawnX =  578;
- static int spawnY = 305;
+    static int spawnX =  578;
+    static int spawnY = 305;
+    public GreenfootSound music3 = new GreenfootSound("Belgiah Medieval Song.wav");
 
     /**
      * Constructor for objects of class Belgium.
@@ -17,34 +18,35 @@ public class Belgium extends Country
      */
     public Belgium(Player p)
     {
-           generateActor("Enemy",1);
+        generateActor("Enemy",1);
         generateActor("Bomb",2);
         generateActor("Cathedral",2);
         generateActor("Ammo", 2);
-       addObject(p,spawnX,spawnY);
+        addObject(p,spawnX,spawnY);
         generateActor("Pointer",spawnX - 25, spawnY,0,0);
     }
+
     /**
      * d. Black - add country specific background music during play
      */
-    
+
     public void act()
     {
         play();
     }
-    
-     public int getAmmo(){
+
+    public int getAmmo(){
         return 8;
     }
 
     public void GenerateActor(String name, int x, int y){
         generateActor(name,x,y,0,0);
     }
-    
+
     public void play()
     {
-        Greenfoot.playSound("Belgian Medieval Song.wav");
+        music3.playLoop();
     }
-    
+
 }
 // Belgium - 3 cathedrals, four bombs, two ammo
