@@ -16,7 +16,7 @@ public class France extends Country
      * Constructor for objects of class France.
      * 
      */
-<<<<<<< HEAD
+
     public France()
     {
 
@@ -30,8 +30,8 @@ public class France extends Country
         generateActor("Ammo", 4);
         generateActor("Hero",spawnX,spawnY, getAmmo(), 0);
         generateActor("Pointer",spawnX - 25, spawnY,0,0);
-=======
-    public France(Player p)
+
+//     public France(Player p)
     { 
 //         France - 5 cathedrals, five bombs, four ammo
         generateActor("Enemy",2);
