@@ -103,7 +103,7 @@ public class Player extends Mover
                 if(bombs > 0 && reloadDelayCount >= bombReloadTime){
                     Country country = (Country)getWorld();
                     Counter counter = country.getCounter();
-                    counter.removeBomb();
+                    counter.setBomb(bombs);
 
                     bomb();
                 }
@@ -137,10 +137,11 @@ public class Player extends Mover
             deadBomb a = (deadBomb) getOneIntersectingObject(deadBomb.class);
             Greenfoot.playSound("ammo.wav");
             getWorld().removeObject(a);
-            Country country = (Country)getWorld();
-            Counter counter = country.getCounter();
-            counter.addBomb();
-            bombs++;
+           Country country = (Country)getWorld();
+                    Counter counter = country.getCounter();
+                   
+            bombs++; 
+            counter.setBomb(bombs);
 
         }
     }

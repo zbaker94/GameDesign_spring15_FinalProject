@@ -10,7 +10,8 @@ public class CounterAmmo extends Actor
 {
     int Ammo = 0;
     public void act() {
-        setImage (new GreenfootImage("Ammo : " + Ammo, 24, Color.WHITE, Color.BLACK ));
+        getAmmo();
+        setImage (new GreenfootImage("Ammo : " + Ammo, 24, Color.ORANGE, Color.BLACK ));
         
     }
     
@@ -23,4 +24,13 @@ public class CounterAmmo extends Actor
         Ammo--;
     }
 
+    public void setAmmo(int a){
+        Ammo = a;
+    }
+    public void getAmmo(){
+    Player p = (Player) getWorld().getObjects(Player.class).get(0);
+    if (p!= null){
+    Ammo = p.ammo;
+}
+}
 }
