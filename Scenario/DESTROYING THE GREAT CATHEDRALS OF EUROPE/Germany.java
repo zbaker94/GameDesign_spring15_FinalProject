@@ -29,7 +29,7 @@ public class Germany extends Country
     }
 
     public int getAmmo(){
-        return 8;
+        return 4;
     }
 
     public void GenerateActor(String name, int x, int y){

@@ -24,7 +24,7 @@ public class Country extends World
 
         // Create a new world with 700x500 cells with a cell size of 1x1 pixels.
         super(700, 500, 1); 
-        setPaintOrder( GameOver.class, Counter.class, Explosion.class,Bullet.class,Enemy.class,Player.class,Bomb.class,Cathedral.class,  Arrow.class);
+        setPaintOrder( GameOver.class,CounterAmmo.class, Counter.class, Explosion.class,Bullet.class,Enemy.class,Player.class,Bomb.class,Cathedral.class,  Arrow.class);
          addObject(new Counter(), 630, 40);
         addObject(new CounterAmmo(), 100, 40);
         //bombsUsed = new Counter("Bombs: ");

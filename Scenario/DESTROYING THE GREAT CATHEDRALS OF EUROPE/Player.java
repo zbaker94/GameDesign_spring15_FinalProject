@@ -51,11 +51,13 @@ public class Player extends Mover
     //checks to see if directional keys are pressed, and makes movement based on that
     public void checkKeys(){
         Pointer p = null;
+        if( getWorld() != null){
         if( !getWorld().getObjects(Pointer.class).isEmpty()){
             p = (Pointer) getWorld().getObjects(Pointer.class).get(0);
         }
-        if(canMove){
-            if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a")){
+    }
+        if(this != null){
+            if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a") && this != null){
                 direction = "left";
 
                 setImage("Cowboy2.png");
@@ -66,7 +68,7 @@ public class Player extends Mover
                 moveDir(5);
 
             }
-            if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d")){
+            if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d")&& this != null){
                 direction = "right";
                 setImage("Cowboy1.png");
                 p.direction = "right";
@@ -75,7 +77,7 @@ public class Player extends Mover
                 p.moveDir(5);
                 moveDir(5);
             }
-            if(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w")){
+            if(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w")&& this != null){
                 direction = "up";
                 p.direction = "up";
                 p.setImage("pointer_up.png");
@@ -83,7 +85,7 @@ public class Player extends Mover
                 p.moveDir(5);
                 moveDir(5);
             }
-            if(Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s")){
+            if(Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s")&& this != null){
                 direction = "down";
                 p.direction = "down";
                 p.setImage("pointer_down.png");
@@ -91,14 +93,14 @@ public class Player extends Mover
                 p.moveDir(5);
                 moveDir(5);
             }
-            if(Greenfoot.isKeyDown("space")){
+            if(Greenfoot.isKeyDown("space")&& this != null){
 
                 if(ammo != 0 && reloadDelayCount >= gunReloadTime){
                     shoot();
                 }
             }
 
-            if(Greenfoot.isKeyDown("shift")){
+            if(Greenfoot.isKeyDown("shift")&& this != null){
 
                 if(bombs > 0 && reloadDelayCount >= bombReloadTime){
                     Country country = (Country)getWorld();
@@ -123,7 +125,7 @@ public class Player extends Mover
             a.die();
             Country country = (Country)getWorld();
             Counter counterammo = country.getCounter();
-            ammo+=3;
+            ammo+= Greenfoot.getRandomNumber(2)+1;
 
         }
         else if(isTouching(Explosion.class)){
@@ -181,7 +183,7 @@ public class Player extends Mover
     }
 
     public void checkEdge(){
-        if(this != null){
+        if(this != null && getWorld() != null){
             if(getWorld().getObjects(Cathedral.class).size() == 0){
                 getWorld().addObject(new Arrow(),80,getWorld().getHeight()/2);
 
