@@ -79,11 +79,22 @@ public class Splash extends World
             count = 0;
         }
         
-
+//         else if ((Greenfoot.isKeyDown("left")) && currentBackground == "commands1.jpg" && count > 30)
+//         {
+//             setBackground(new GreenfootImage("rules1.jpg"));
+//             currentBackground = "rules1.jpg";
+//             count = 0;
+//         }
+//         else if ((Greenfoot.isKeyDown("left")) && currentBackground == "rules.jpg" && count > 30)
+//         {
+//             setBackground(new GreenfootImage("players1.jpg"));
+//             currentBackground = "players1.jpg";
+//             count = 0;
+//         }
 
         else if(Greenfoot.isKeyDown("space")){
             Greenfoot.playSound("select.wav");
-
+            Greenfoot.setWorld(new Germany());
         }
         count = count + 1;
        

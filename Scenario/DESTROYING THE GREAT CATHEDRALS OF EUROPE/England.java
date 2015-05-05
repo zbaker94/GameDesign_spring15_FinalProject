@@ -8,46 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class England extends Country
 {
-
-    static int spawnX =  578;
-    static int spawnY = 305;
-    public GreenfootSound music2 = new GreenfootSound("English Medieval Song.wav");
-
- 
+static int spawnX =  578;
+ static int spawnY = 305;
     /**
      * Constructor for objects of class England.
      * 
      */
     public England(Player p)
     {
-        generateActor("Enemy",3);
+ generateActor("Enemy",3);
         generateActor("Bomb",3);
         generateActor("Cathedral",3);
         generateActor("Ammo", 1);
-
-        generateActor("Hero",spawnX,spawnY, getAmmo(), 0);
+       addObject(p,spawnX,spawnY);
         generateActor("Pointer",spawnX - 25, spawnY,0,0);
-
-
-        addObject(p,spawnX,spawnY);
-        generateActor("Pointer",spawnX - 25, spawnY,0,0);
-
-    }
-
-    /**
-     * D. Black - Add country specific background music during play
-     */
-    public void act()
-    {
-        music2.playLoop();
-    }
-
-    public int getAmmo(){
-        return 8;
-    }
-
-    public void GenerateActor(String name, int x, int y){
-        generateActor(name,x,y,0,0);
     }
 
 }

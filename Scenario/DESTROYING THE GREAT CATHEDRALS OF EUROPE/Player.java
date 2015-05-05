@@ -52,10 +52,10 @@ public class Player extends Mover
     public void checkKeys(){
         Pointer p = null;
         if( getWorld() != null){
-            if( !getWorld().getObjects(Pointer.class).isEmpty()){
-                p = (Pointer) getWorld().getObjects(Pointer.class).get(0);
-            }
+        if( !getWorld().getObjects(Pointer.class).isEmpty()){
+            p = (Pointer) getWorld().getObjects(Pointer.class).get(0);
         }
+    }
         if(this != null){
             if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a") && this != null){
                 direction = "left";
@@ -110,8 +110,6 @@ public class Player extends Mover
                     bomb();
                 }
 
-               
-
             }
         }
     }
@@ -120,7 +118,6 @@ public class Player extends Mover
         if(isTouching(Enemy.class)){
 
             die();
-            Greenfoot.stop();
 
         }else if(isTouching(Ammo.class)){
             Ammo a = (Ammo) getOneIntersectingObject(Ammo.class);
@@ -135,8 +132,6 @@ public class Player extends Mover
             Explosion e = (Explosion) getOneIntersectingObject(Explosion.class);
             if(e != null){
                 die();
-                 Greenfoot.stop();
-                 
 
             }
         }
@@ -144,9 +139,9 @@ public class Player extends Mover
             deadBomb a = (deadBomb) getOneIntersectingObject(deadBomb.class);
             Greenfoot.playSound("ammo.wav");
             getWorld().removeObject(a);
-            Country country = (Country)getWorld();
-            Counter counter = country.getCounter();
-
+           Country country = (Country)getWorld();
+                    Counter counter = country.getCounter();
+                   
             bombs++; 
             counter.setBomb(bombs);
 
@@ -181,7 +176,10 @@ public class Player extends Mover
         myWorld.addObject(gameover, myWorld.getWidth()/2, myWorld.getHeight()/2);
         Greenfoot.delay(20); 
         getWorld().removeObject(this);
-        
+        Greenfoot.setWorld(new Germany());
+        // d black 6 apr 15
+        // Display loss banner
+        // stop game
     }
 
     public void checkEdge(){
@@ -200,9 +198,9 @@ public class Player extends Mover
                         Greenfoot.playSound("transition.wav");
                         currentLevel = 3;
                         getWorld().removeObject(this);
-                        //                         Greenfoot.setWorld(new France(this));
+                        Greenfoot.setWorld(new France(this));
                     }
-                }else if(currentLevel == 3){
+                else if(currentLevel == 3){
                     Greenfoot.playSound("transition.wav");
                     currentLevel = 4;
                     getWorld().removeObject(this);
@@ -217,4 +215,4 @@ public class Player extends Mover
         }
     }
 }
-
+}
