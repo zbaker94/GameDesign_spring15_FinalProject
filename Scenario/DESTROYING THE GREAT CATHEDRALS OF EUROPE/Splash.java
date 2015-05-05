@@ -4,7 +4,7 @@ import java.awt.Color;
  * SplashPage is the first thing the user will see upon opening the game.  It will describe the game, introduce
  * actors, introduce command keys, credit authors, invite user to press a certain key to proceed to game play.
  * author: dblack
- * version 1.0
+ * version 1.2
  */
 public class Splash extends World
 {
@@ -36,7 +36,7 @@ public class Splash extends World
         background.setFont(text1);
         background.setColor(java.awt.Color.RED);
         background.drawString((titleLine1), 90, 20); 
-        
+
         java.awt.Font text2 = new java.awt.Font("Times New Roman", java.awt.Font.BOLD, 12);
         background.setFont(text2);
         background.setColor(java.awt.Color.BLACK);
@@ -46,7 +46,7 @@ public class Splash extends World
         Color myCol2 = new Color (0,0,255,40);
         background.setColor(myCol1);
         background.fillRect(190, 100, 220, 50);
-        
+
         java.awt.Font text3 = new java.awt.Font("Arial", java.awt.Font.BOLD, 14);
         background.setFont(text3);
         background.setColor(java.awt.Color.WHITE);
@@ -57,47 +57,51 @@ public class Splash extends World
 
     public void act() 
     {       
+        checkKeys();
+        count = count + 1;
+    }  
 
-        if ((Greenfoot.isKeyDown("right")) && currentBackground == "rules1.jpg" && count > 5 )
+    public void checkKeys()
+    {
+        if ((Greenfoot.isKeyDown("left")) && currentBackground == "rules1.jpg" && count > 10  ) 
         {
-            setBackground(new GreenfootImage("commands1.jpg"));
-            currentBackground = "commands1.jpg";
+            setBackground(new GreenfootImage("players1.jpg"));
+            currentBackground = "players1.jpg";
             count = 0;
         }
 
-        else if ((Greenfoot.isKeyDown("right")) && currentBackground == "players1.jpg" && count > 5  )
+        if ((Greenfoot.isKeyDown("left")) && currentBackground == "commands1.jpg" && count > 10)
         {
             setBackground(new GreenfootImage("rules1.jpg"));
             currentBackground = "rules1.jpg";
             count = 0;
         }
 
-        else if ((Greenfoot.isKeyDown("right")) && currentBackground == "church ruin 1.jpg" && count > 5  ) 
+        else if ((Greenfoot.isKeyDown("right")) && currentBackground == "rules1.jpg" && count > 10 )
+        {
+            setBackground(new GreenfootImage("commands1.jpg"));
+            currentBackground = "commands1.jpg";
+            count = 0;
+        }
+
+        else if ((Greenfoot.isKeyDown("right")) && currentBackground == "players1.jpg" && count > 10  )
+        {
+            setBackground(new GreenfootImage("rules1.jpg"));
+            currentBackground = "rules1.jpg";
+            count = 0;
+        }
+
+        else if ((Greenfoot.isKeyDown("right")) && currentBackground == "church ruin 1.jpg" && count > 10  ) 
         {
             setBackground(new GreenfootImage("players1.jpg"));
             currentBackground = "players1.jpg";
             count = 0;
         }
-        
-//         else if ((Greenfoot.isKeyDown("left")) && currentBackground == "commands1.jpg" && count > 30)
-//         {
-//             setBackground(new GreenfootImage("rules1.jpg"));
-//             currentBackground = "rules1.jpg";
-//             count = 0;
-//         }
-//         else if ((Greenfoot.isKeyDown("left")) && currentBackground == "rules.jpg" && count > 30)
-//         {
-//             setBackground(new GreenfootImage("players1.jpg"));
-//             currentBackground = "players1.jpg";
-//             count = 0;
-//         }
 
         else if(Greenfoot.isKeyDown("space")){
             Greenfoot.playSound("select.wav");
             Greenfoot.setWorld(new Germany());
         }
-        count = count + 1;
-       
-    }  
-
+        //Never could get else if sequence to go back from rules to players.  curious.
+    }
 }
