@@ -3,8 +3,8 @@ import greenfoot.*;
 /**
  * Write a description of class Player here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Z.Taylor 
+ * @version (1.2)
  */
 public class Player extends Mover
 {
@@ -48,7 +48,10 @@ public class Player extends Mover
         checkKeys();
 
     }   
-    //checks to see if directional keys are pressed, and makes movement based on that
+    /**
+     * check to see if directional keys are pressed, and makes movement based on that
+     */
+      
     public void checkKeys(){
         Pointer p = null;
         if( getWorld() != null){
@@ -113,7 +116,10 @@ public class Player extends Mover
             }
         }
     }
-    //checks if player is colliding, if it is with an enemy, player dies 
+    /**
+     * check if player is colliding with object, if it is with an enemy, player dies 
+     */
+    
     public void checkCollide(){
         if(isTouching(Enemy.class)){
 
@@ -148,7 +154,10 @@ public class Player extends Mover
         }
     }
 
-    //creates a bulllet that moves in the same direction as the player
+    /**
+     * creates a bulllet that moves in the same direction as the player
+     */
+    
     public void shoot(){
 
         ammo--;
@@ -156,6 +165,9 @@ public class Player extends Mover
         Greenfoot.playSound("shoot.wav");
         getWorld().addObject(new Bullet(direction), getX(), getY());
     }
+/**
+ * Drop a bomb
+ */
 
     public void bomb(){
         Greenfoot.playSound("drop.wav");
@@ -163,6 +175,9 @@ public class Player extends Mover
         reloadDelayCount = 0;
         getWorld().addObject(new Bomb(), getX(), getY());
     }
+/**
+ * player dies
+ */
 
     public void die(){
         Greenfoot.playSound("die.wav");
@@ -181,6 +196,9 @@ public class Player extends Mover
         // Display loss banner
         // stop game
     }
+/**
+ * let player advance to next level/country
+ */
 
     public void checkEdge(){
         if(this != null && getWorld() != null){

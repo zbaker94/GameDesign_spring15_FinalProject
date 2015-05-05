@@ -3,8 +3,8 @@ import java.awt.Color;
 /**
  * Write a description of class GameOver here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Z. Taylor 
+ * @version 1.2
  */
 public class GameOver extends Actor
 {
