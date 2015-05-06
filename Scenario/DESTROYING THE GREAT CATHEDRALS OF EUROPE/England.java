@@ -17,8 +17,8 @@ static int spawnX =  578;
     public England(Player p)
     {
  generateActor("Enemy",3);
-        generateActor("Bomb",4);
-        generateActor("Cathedral",4);
+        generateActor("Bomb",3);
+        generateActor("Cathedral",3);
         generateActor("Ammo", 1);
        addObject(p,spawnX,spawnY);
         generateActor("Pointer",spawnX - 25, spawnY,0,0);

@@ -21,8 +21,8 @@ public class France extends Country
     public France(Player p)
     { 
 //         France - 5 cathedrals, five bombs, four ammo
-        generateActor("Enemy",3);
-            generateActor("Cathedral",3);
+        generateActor("Enemy",2);
+            generateActor("Cathedral",2);
             generateActor("Bomb",3);
             generateActor("Ammo", 1);
             addObject(p,spawnX,spawnY);
