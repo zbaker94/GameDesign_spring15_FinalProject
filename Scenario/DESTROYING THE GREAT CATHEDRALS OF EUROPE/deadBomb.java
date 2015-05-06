@@ -17,7 +17,5 @@ public class deadBomb extends Actor
     {
         count++;
 
-   
     }
-
 }

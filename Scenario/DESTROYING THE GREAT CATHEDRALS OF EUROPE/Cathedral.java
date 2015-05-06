@@ -41,7 +41,11 @@ public class Cathedral extends Actor
         }
 
     }  
-    //checks if the cathedral has been destroyed
+
+    /**
+     * checks if the cathedral has been destroyed
+     */
+
     public void checkExplode(){
         if(isTouching(Explosion.class)){
             Explosion e = (Explosion) getOneIntersectingObject(Explosion.class);
@@ -51,6 +55,11 @@ public class Cathedral extends Actor
             }
         }
     }
+
+    /**
+     * Checks to see if random cathedral placement results in cathedral images overlapping each other.  If so,
+     * re-spawn in new location.  repeat until no overlaps.
+     */
 
     public void checkOverlap(){
         GreenfootImage cathedral = new GreenfootImage("spire.png");
@@ -67,7 +76,7 @@ public class Cathedral extends Actor
             getWorld().removeObject(this);
         }
     }
-    //on death, spawns another enemy, then dissapeers
+
     public void die(){
 
         getWorld().removeObject(this);

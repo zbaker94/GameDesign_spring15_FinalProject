@@ -24,7 +24,7 @@ public class Explosion extends Actor
     /** How much do we increment the index in the explosion animation. */
     private int increment=1;
     
-    private int I = 9999;
+//     private int I = 9999;
     
     /**
      * Create a new explosion.

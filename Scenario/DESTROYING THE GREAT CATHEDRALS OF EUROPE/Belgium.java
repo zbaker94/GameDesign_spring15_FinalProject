@@ -18,7 +18,7 @@ public class Belgium extends Country
     public Belgium(Player p)
     {
            generateActor("Enemy",1);
-        generateActor("Bomb",2);
+        generateActor("Bomb",3);
         generateActor("Cathedral",2);
         generateActor("Ammo", 2);
        addObject(p,spawnX,spawnY);
