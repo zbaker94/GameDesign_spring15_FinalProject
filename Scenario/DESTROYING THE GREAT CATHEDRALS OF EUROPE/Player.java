@@ -229,13 +229,23 @@ public class Player extends Mover
                         Greenfoot.setWorld(new England(this));
                     }
                     else if(currentLevel == 4){
-                        Greenfoot.playSound("fanfare.wav");
-                        setImage(new GreenfootImage("YOU WON!", 48, Color.BLACK, Color.RED));//display banner
-                        Greenfoot.stop();
+                       gameOver();
                     }
                 } 
 
             }
         }
+    }
+    public void gameOver(){
+         Greenfoot.playSound("fanfare.wav");
+         this.setLocation(350,250);
+         World myWorld = getWorld();
+        GameOver gameover = new GameOver("YOU WON!");
+        myWorld.addObject(gameover, myWorld.getWidth()/2, myWorld.getHeight()/2);
+                        this.setImage(new GreenfootImage("YOU WON!", 48, Color.BLACK, Color.RED));//display banner
+                        Greenfoot.stop();
+    }
+    public void setCurrentLevel(int l){
+        currentLevel = l;
     }
 }

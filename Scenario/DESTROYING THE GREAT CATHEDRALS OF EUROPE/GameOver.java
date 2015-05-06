@@ -17,4 +17,9 @@ public class GameOver extends Actor
     {
         setImage(new GreenfootImage("You Died", 48, Color.BLACK, Color.RED));
     }
+    
+     public GameOver(String txt)
+    {
+        setImage(new GreenfootImage(txt, 48, Color.BLACK, Color.RED));
+    }
 }
